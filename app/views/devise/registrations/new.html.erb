@@ -3,20 +3,20 @@
     <div class="form-container sign-up-container ">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <h2>Créer un compte</h2>
-        <span> Entrez vos données personnelles et rejoignez notre communauté </span>
+        <span> Veuillez choisir un Email et un mot de passe</span>
         <div class="hidden-label">
           <%= f.input :email,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "email", placeholder: "Enter your email" }%>
+                  input_html: { autocomplete: "email", placeholder: "Email" }%>
           <%= f.input :password,
                   required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password", placeholder: "Enter a valid password" } %>
+                  hint: ("#{@minimum_password_length} caracteres au minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password", placeholder: "Mot de passe" } %>
         <%= f.input :password_confirmation,
                   required: true,
-                  input_html: { autocomplete: "new-password", placeholder: "Confirm your password" } %>
-        <%= f.button :submit, "Sign up" %>
+                  input_html: { autocomplete: "new-password", placeholder: "Confirmer le mot de passe" } %>
+        <%= f.button :submit, "Creer mon compte" %>
         </div>
       <% end %>
 
@@ -24,10 +24,11 @@
     <div class="overlay-container">
       <div class="overlay">
         <div class="overlay-panel overlay-left">
-          <h1>Bienvenue!</h1>
-          <p>Entrez vos données personnelles et rejoignez notre communauté</p>
+          <h1>Bienvenue !</h1>
+          <p>Entrez vos données personnelles et rejoignez notre communauté</p><br>
+          <p>Vous avez deja un compte ?</p>
           <%- if controller_name != 'sessions' %>
-            <%= link_to "Log in", new_session_path(resource_name), class: "ghost" %><br />
+            <%= link_to "Se connecter", new_session_path(resource_name), class: "ghost" %><br />
           <% end %>
         </div>
       </div>
