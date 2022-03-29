@@ -1,1 +1,9 @@
 <h1>Games index</h1>
+
+<div class="container">
+<div class="games-card">
+   <% @games.each do |game| %>
+ <h2> <%= game.description %> </h2>
+   <% end  %>
+</div>
+</div>
