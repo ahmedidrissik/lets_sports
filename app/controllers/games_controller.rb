@@ -1,14 +1,17 @@
 class GamesController < ApplicationController
+
   def index
     @games = Game.all
   end
 
   def new
     @game = Game.new
+    @location = Location.new
   end
 
   def create
     @game = Game.new(game_params)
+    @game.user = current_user
     if @game.save
       redirect_to game_path(@game)
     else
@@ -38,6 +41,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:sport_id, :creator_id, :description, :location_id, :date, :capacity, :status)
+    params.require(:game).permit(:sport_id, :creator_id, :description, :location_id, :date, :capacity, :status, :title)
   end
 end
