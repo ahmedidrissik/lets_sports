@@ -1,4 +1,7 @@
+// Specific CSS for your home-page
+@import "bootstrap.min";
 @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
 #carousel {
     background: rgb(235, 189, 189);
     background: radial-gradient(circle, rgba(73, 125, 236, 0.335) 0%, rgba(33, 142, 214, 0.722) 33%, rgb(2, 65, 107) 90%);
@@ -143,4 +146,6 @@
     margin-top:64px ;
   }
 
+main {
+  min-height: 85vh;
 }
