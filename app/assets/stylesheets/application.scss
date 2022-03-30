@@ -10,3 +10,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.game {
+  position: relative;
+  bottom: 73px;
+}
+
+.toto {
+  height: 80px;
+}
+.details {
+  position: relative;
+  right: 100px;
+}
