@@ -4,37 +4,30 @@
       <div class="row align-items-center flex-row-reverse">
         <div class="col-md-6">
             <div class="about-text go-to">
-                <h3 class="dark-color">Mohamed EL AZZOUZI</h3>
+                <h3 class="dark-color"><%= @user.name %></h3>
                 <h6 class="theme-color lead">Bio</h6>
-                <p>Grand passione du Football, je m'investis dans le travail d'equipe. Pour moi, c'est la clef de la victoire.</p>
+                <p><%= @user.bio %></p>
                 <div class="row about-list">
                     <div class="col-md-6">
                         <div class="media">
                             <label>Age</label>
-                            <p>25</p>
+                            <p><%= @user.age %></p>
                         </div>
                         <div class="media">
                             <label>Rating</label>
-                            <p>4.7 Stars</p>
-                        </div>
-                        <div class="media">
-                            <label>Ville</label>
-                            <p>Casablanca</p>
+                            <p><%= @user.rating %> Stars</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="media">
                             <label>E-mail</label>
-                            <p>info@domain.com</p>
+                            <p><%= @user.email %></p>
                         </div>
                         <div class="media">
                             <label>Telephone</label>
-                            <p>07 77 21 14 86</p>
+                            <p><%= @user.phone_number %></p>
                         </div>
-                        <div class="media">
-                            <label>Membre depuis</label>
-                            <p>30/03/2022</p>
-                        </div><br>
+                       <br>
                         <a href="#">Editer le profil</a>
                     </div>
                 </div>

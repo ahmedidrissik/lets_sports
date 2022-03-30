@@ -3,7 +3,6 @@ User.destroy_all
 Game.destroy_all
 Location.destroy_all
 Sport.destroy_all
-User.destroy_all
 p "destroy Ok"
 # a User have :
 #---name
