@@ -1,0 +1,25 @@
+.new-game-container {
+  background-color: #CBCDCC;
+  border-radius: 8px;
+  box-shadow: 4px 4px 8px rgba($color: #000000, $alpha: .2);
+  margin-top: 64px;
+  padding: 64px;
+  input {
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    text-align: center;
+
+  }
+
+  input[type="submit"] {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.new-game-title {
+  text-align: center;
+
+}

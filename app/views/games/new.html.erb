@@ -1,14 +1,25 @@
-<h1>New game</h1>
+<h1 class="new-game-title"><strong> Créer un nouveau match </strong></h1>
 
-<div class="container item-form">
-  <h2>nouveau match :</h2>
-  <%= simple_form_for [@game] do |f| %>
-    <%= f.input :title, placeholder: "Titre" %>
-    <%= f.input :description, placeholder: "Description" %>
-    <%= f.input :date, placeholder: "Date"%>
-    <%= f.input :location, placeholder: "Lieu"%>
-    <%= f.input :capacity, placeholder: "Capacité"%>
-    <%= f.association :sport, prompt: "Select sport"%>
-    <%= f.button :submit, {class: "btn btn-primary "}%>
-  <% end %>
+<div class="container new-game-container">
+
+
+  <div class="container item-form">
+    <h2> Entrez les informations :</h2>
+    <%= simple_form_for [@location] do |f| %>
+      <%= f.input :name, placeholder: "Nom", label: "Nom" %>
+      <%= f.input :address, placeholder: "Adresse", label: "Ville" %>
+      <%= f.input :city, placeholder: "Ville", label: "Ville" %>
+      <%= f.button :submit, "Ajouter lieu", {class: "btn btn-primary "}%>
+    <% end %>
+
+    <%= simple_form_for [@game] do |f| %>
+      <%= f.input :title, placeholder: "Titre", label: "Titre" %>
+      <%= f.input :description, placeholder: "Description" %>
+      <%= f.input :date, placeholder: "Date"%>
+      <%= f.association :location, placeholder: "Lieu", label: "Lieu" %>
+      <%= f.input :capacity, placeholder: "Capacité", label: "Capacité" %>
+      <%= f.association :sport, prompt: "Selectionnez un sport" %>
+      <%= f.button :submit, "Créer", {class: "btn btn-primary "}%>
+    <% end %>
+  </div>
 </div>
