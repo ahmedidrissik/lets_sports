@@ -2,7 +2,7 @@
 <div class="container">
   <div class="cotainer toto">
     <h1 class = "text-center py-3">Parties recentes</h1>
-    <button type="button" class="btn btn-outline-primary game">Creer une partie</button>
+    <button type="button" class="btn btn-outline-primary game"><%= link_to "Creer une partie", new_game_path %></button>
   </div>
   <div class="row">
     <div class="card border-primary col-12 mb-3 col-sm-12">
@@ -10,7 +10,7 @@
         <div class="card-body">
           <h4 class="card-title">Titre de l'annonce</h4>
           <p class="card-text">Details de l'annonce</p>
-          <button type="button" class="btn btn-outline-primary">Details</button>
+          <%= link_to "Details", games_path %>
         </div>
       </div>
     </div>

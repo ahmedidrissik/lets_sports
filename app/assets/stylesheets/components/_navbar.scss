@@ -1,5 +1,23 @@
 @import "config/bootstrap.min";
 
-#navbar {
-  background-color: #F50000;
+.navbar-lewagon {
+  justify-content: space-between;
+  background: #F50000;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 60px;
+  background-color: aliceblue;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #ffffff;
+  border-radius: 30px;
+  border-color: white;
+  border-style: ridge;
+  padding-inline-end: 10px;
 }
