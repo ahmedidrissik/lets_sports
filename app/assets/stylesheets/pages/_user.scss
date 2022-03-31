@@ -8,10 +8,13 @@ body{
 .gray-bg {
   background-color: #f5f5f5;
 }
-img {
-  max-width: 100%;
+
+#items {
+  border-style: double;
+  border-color: #000000;
 }
-img {
+
+#bio img {
   vertical-align: middle;
   border-style: inset;
   border-radius: 50%;
@@ -59,23 +62,7 @@ width: 88px;
 margin: 0;
 position: relative;
 }
-.about-list label:after {
-content: "";
-position: absolute;
-top: 0;
-bottom: 0;
-right: 11px;
-width: 1px;
-height: 12px;
-background: #20247b;
--moz-transform: rotate(15deg);
--o-transform: rotate(15deg);
--ms-transform: rotate(15deg);
--webkit-transform: rotate(15deg);
-transform: rotate(15deg);
-margin: auto;
-opacity: 0.5;
-}
+
 .about-list p {
 margin: 0;
 font-size: 15px;
