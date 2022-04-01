@@ -1,6 +1,7 @@
 body{
   color: #7e7e7e;
 }
+
 .section {
   padding: 50px 0;
   position: relative;
@@ -16,7 +17,6 @@ body{
 
 #tabs {
   border: #000000
-
 }
 
 #bio img {
@@ -105,15 +105,7 @@ margin: 0 0 5px;
 font-weight: 600;
 margin: 0;
 }
-mark {
-  background-image: linear-gradient(rgba(252, 83, 86, 0.6), rgba(252, 83, 86, 0.6));
-  background-size: 100% 3px;
-  background-repeat: no-repeat;
-  background-position: 0 bottom;
-  background-color: transparent;
-  padding: 0;
-  color: currentColor;
-}
+
 .theme-color {
   color: #fc5356;
 }

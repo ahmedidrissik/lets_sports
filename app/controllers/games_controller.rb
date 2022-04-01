@@ -1,4 +1,6 @@
 class GamesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index ]
+
 
   def index
     @games = Game.all
@@ -21,6 +23,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @booking_id = @game.bookings.blank? ? 0 : @game.bookings.where(user: current_user).first.id
   end
 
   def update
@@ -33,7 +36,7 @@ class GamesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @game = Game.find(params[:id])
     @game.delete
   end
