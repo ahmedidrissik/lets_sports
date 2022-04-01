@@ -14,10 +14,29 @@
   background-color: aliceblue;
 }
 
-.navbar-light .navbar-nav .nav-link {
-  color: #ffffff;
+.navbar-light .nav-link {
+  color: #f50000;
   border-radius: 30px;
-  border-color: white;
-  border-style: ridge;
   padding-inline-end: 10px;
+  background-color: white;
+}
+
+#login-btn a {
+  color: #000000 !important;
+  font-weight: 800;
+  border: #000000;
+  &:hover {
+    color: white !important;
+    background-color: black;
+  }
+}
+
+a.home-btn  {
+  color: #000000 !important;
+  font-weight: 800;
+  border: #000000;
+  &:hover {
+    color: white !important;
+    background-color: black;
+  }
 }
