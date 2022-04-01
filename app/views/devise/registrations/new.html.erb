@@ -16,14 +16,14 @@
         <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password", placeholder: "Confirmer le mot de passe" } %>
-        <%= f.button :submit, "Creer mon compte" %>
+        <%= f.button :submit, "Creer mon compte", class: "loglog" %>
         </div>
       <% end %>
 
     </div>
     <div class="overlay-container">
       <div class="overlay">
-        <div class="overlay-panel overlay-left">
+        <div class="overlay-panel overlay-left" id="reglog">
           <h1>Bienvenue !</h1>
           <p>Entrez vos données personnelles et rejoignez notre communauté</p><br>
           <p>Vous avez deja un compte ?</p>

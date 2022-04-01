@@ -44,16 +44,38 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-5">
-      <h3>Vos annonces</h3>
-      <h3>Vos participations</h3>
-      <h3>En attente</h3>
+      <div class="col-md-5" id="tabs">
+      <a id="annonce-link"><h3>Vos annonces</h3></a>
+      <a id="participation-link"><h3>Vos participations</h3></a>
+      <a id="attente-link"><h3>En attente</h3></a>
       </div>
        <div class="col-md-7">
         <div class="container">
-          <div class="row">
+          <div class="row" id="annonces">
             <div class="col-md-4" style="background: grey">
-            <p>item 1</p>
+            <p>Annoce</p>
+            </div>
+            <div class="col-md-4" style="background: grey">
+            <p>Annoces</p>
+            </div>
+            <div class="col-md-4" style="background: grey">
+            <p>item 3</p>
+            </div>
+          </div>
+          <div class="row d-none" id="participations">
+            <div class="col-md-4" style="background: grey">
+            <p>Participation</p>
+            </div>
+            <div class="col-md-4" style="background: grey">
+            <p>item 2</p>
+            </div>
+            <div class="col-md-4" style="background: grey">
+            <p>item 3</p>
+            </div>
+          </div>
+          <div class="row d-none" id="attentes">
+            <div class="col-md-4" style="background: grey">
+            <p>En attente</p>
             </div>
             <div class="col-md-4" style="background: grey">
             <p>item 2</p>
@@ -67,3 +89,23 @@
     </div>
   </div>
 </section>
+<script>
+const showHide = (elementId) => {
+  document.getElementById("annonces").classList.add("d-none")
+  document.getElementById("participations").classList.add("d-none")
+  document.getElementById("attentes").classList.add("d-none")
+  document.getElementById(elementId).classList.remove("d-none")
+}
+document.getElementById("annonce-link").addEventListener('click', (event) => {
+  event.preventDefault();
+ showHide("annonces");
+})
+document.getElementById("participation-link").addEventListener('click', (event) => {
+  event.preventDefault();
+  showHide("participations")
+})
+document.getElementById("attente-link").addEventListener('click', (event) => {
+  event.preventDefault();
+  showHide("attentes")
+})
+</script>

@@ -14,12 +14,12 @@
                   input_html: { autocomplete: "current-password", placeholder: "Mot de passe" } %>
         </div>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-        <%= f.button :submit, "Se connecter" %>
+        <%= f.button :submit, "Se connecter", class: "loglog" %>
       <% end %>
 	</div>
 	<div class="overlay-container">
 		<div class="overlay">
-			<div class="overlay-panel overlay-right">
+			<div class="overlay-panel overlay-right" id="register">
 				<h1>Toujours pas un membre ?</h1>
 				<p>Creer votre compte et rejoignez notre communauté !</p>
         <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
