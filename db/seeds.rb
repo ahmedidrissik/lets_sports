@@ -49,10 +49,10 @@ eSport = Sport.create!(name:"E-Sports")
 #---city
 p "Creating Location"
 cityFoot = Location.create!(name:'City-Foot',address:'Route El Jadida Km 7',city:"Casablanca")
-arsenal = Location.create!(name:'Arsenal',address:'Ouasis',city:"Casablanca")
+arsenal = Location.create!(name:'Arsenal',address:'Oasis',city:"Casablanca")
 Master = Location.create!(name:'Master 5',address:'Lissasfa apres rond point Azban',city:"Casablanca")
-est = Location.create!(name:'Tairain EST',address:'Quartier Chaimae Sidi Maarouf',city:"Casablanca")
-clubcoc = Location.create!(name:'Tairain COC',address:'Rond point MLY Boulvard Roudani',city:"Casablanca")
+est = Location.create!(name:'Terrain EST',address:'Quartier Chaimae Sidi Maarouf',city:"Casablanca")
+clubcoc = Location.create!(name:'Terrain COC',address:'Rond point MLY Boulvard Roudani',city:"Casablanca")
 cpmlexM5 = Location.create!(name:'Salle basket M5',address:'Maarif',city:"Casablanca")
 
 # a game have
@@ -64,12 +64,12 @@ cpmlexM5 = Location.create!(name:'Salle basket M5',address:'Maarif',city:"Casabl
 #---location-id
 #---Title
 p "Creating Game"
-Game.create!(title:"Match 5x5",description:"nous somme un group de 5 joueur et nous cherchons 5 autres jouer, le terrain est bel et reserver a cityFoot",date:DateTime.now,capacity:5,status:"still need player",location_id:cityFoot.id,sport_id: football.id,creator_id:user1.id)
-Game.create!(title:"Tournoi Tenis",description:"Le coc Club organize Un tournoi Tenis palces limite a 10 joueurs ",date:DateTime.now,capacity:10,status:"still need player",location_id: clubcoc.id,sport_id: tennis.id,creator_id: user4.id)
+Game.create!(title:"Match 5x5",description:"nous sommes un groupe de 5 joueurs et nous cherchons 5 autres joueurs, le terrain est bel et bien reservé à cityFoot",date:DateTime.now,capacity:5,status:"still need player",location_id:cityFoot.id,sport_id: football.id,creator_id:user1.id)
+Game.create!(title:"Tournoi Tennis",description:"Le coc Club organise Un tournoi Tennis palces limite a 10 joueurs ",date:DateTime.now,capacity:10,status:"still need player",location_id: clubcoc.id,sport_id: tennis.id,creator_id: user4.id)
 Game.create!(title:"Match football",description:"je cherche 2 joueur pour un march foot 7x7",date:DateTime.now,capacity:2,status:"still need player",location_id:arsenal.id,sport_id: football.id,creator_id:user3.id)
-Game.create!(title:"Partido Pitota",description:"il nous manque un joueur",date:DateTime.now,capacity:1,status:"still need player",location_id:arsenal.id,sport_id: football.id,creator_id:user13.id)
-Game.create!(title:"Tenis Simple",description:"je cherche un TenisMan pour paraticer ",date:DateTime.now,capacity:1,status:"still need player",location_id: clubcoc.id,sport_id: tennis.id,creator_id: user14.id)
-Game.create!(title:"Match basketball",description:"je cherche 3 joueur pour un match ",date:DateTime.now,capacity:3,status:"still need player",location_id:cpmlexM5.id,sport_id: basketball.id,creator_id:user8.id)
+Game.create!(title:"Partido Pelota",description:"il nous manque un joueur",date:DateTime.now,capacity:1,status:"still need player",location_id:arsenal.id,sport_id: football.id,creator_id:user13.id)
+Game.create!(title:"Tennis Simple",description:"je cherche un TennisMan pour pratiquer ",date:DateTime.now,capacity:1,status:"still need player",location_id: clubcoc.id,sport_id: tennis.id,creator_id: user14.id)
+Game.create!(title:"Match basketball",description:"je cherche 3 joueurs pour un match ",date:DateTime.now,capacity:3,status:"still need player",location_id:cpmlexM5.id,sport_id: basketball.id,creator_id:user8.id)
 
 
 
