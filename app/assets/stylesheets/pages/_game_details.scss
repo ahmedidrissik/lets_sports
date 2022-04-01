@@ -1,4 +1,9 @@
 .container-game-details {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.container-game-details h3 {
+  text-align: center;
 }
