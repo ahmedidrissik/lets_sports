@@ -1,1 +1,10 @@
-<h1>Games show</h1>
+<div class="container">
+  <div class="container-game-details" id="game-details">
+   <%= render "game_details", game: @game %>
+  </div>
+  <div class="container-game-details" id="game-details">
+      <% reserved = @game.bookings.pluck(:player_id).include?(current_user.id) %>
+        <button id="annulation" type="button" class="btn btn-primary <%= reserved ? '' : 'd-none' %>">Annuler</button>
+        <button id="confirmation" type="button" class="btn btn-primary <%= !reserved ? '' : 'd-none' %>">Rejoindre</button>
+  </div>
+</div>

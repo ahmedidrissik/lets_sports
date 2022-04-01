@@ -1,6 +1,7 @@
 body{
-  color: #6F8BA4;
+  color: #7e7e7e;
 }
+
 .section {
   padding: 50px 0;
   position: relative;
@@ -8,10 +9,17 @@ body{
 .gray-bg {
   background-color: #f5f5f5;
 }
-img {
-  max-width: 100%;
+
+#items {
+  border-style: double;
+  border-color: #000000;
 }
-img {
+
+#tabs {
+  border: #000000
+}
+
+#bio img {
   vertical-align: middle;
   border-style: inset;
   border-radius: 50%;
@@ -59,23 +67,7 @@ width: 88px;
 margin: 0;
 position: relative;
 }
-.about-list label:after {
-content: "";
-position: absolute;
-top: 0;
-bottom: 0;
-right: 11px;
-width: 1px;
-height: 12px;
-background: #20247b;
--moz-transform: rotate(15deg);
--o-transform: rotate(15deg);
--ms-transform: rotate(15deg);
--webkit-transform: rotate(15deg);
-transform: rotate(15deg);
-margin: auto;
-opacity: 0.5;
-}
+
 .about-list p {
 margin: 0;
 font-size: 15px;
@@ -113,15 +105,7 @@ margin: 0 0 5px;
 font-weight: 600;
 margin: 0;
 }
-mark {
-  background-image: linear-gradient(rgba(252, 83, 86, 0.6), rgba(252, 83, 86, 0.6));
-  background-size: 100% 3px;
-  background-repeat: no-repeat;
-  background-position: 0 bottom;
-  background-color: transparent;
-  padding: 0;
-  color: currentColor;
-}
+
 .theme-color {
   color: #fc5356;
 }

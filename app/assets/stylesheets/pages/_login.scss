@@ -11,6 +11,9 @@
   width: 100%;
 }
 
+#register h1 {
+  color: white;
+}
 
 #login h1 {
 	font-weight: bold;
@@ -34,7 +37,7 @@
 }
 
 #login a {
-	color: #333;
+	color: rgb(255, 255, 255);
 	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0;
@@ -48,17 +51,28 @@
 	outline: none;
 }
 
-#login a.ghost {
-  border-radius: 20px;
-	background-color: #FF4B2B;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 12px 45px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
-	border: 1px solid #FFFFFF;
+input.loglog:hover {
+color: #eee;
+background-color: #7b8ab8 !important;
+}
+
+#login  {
+  a.ghost {
+    border-radius: 20px;
+    background-color: #ff1e00;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    border: 1px solid #FFFFFF;
+    &:hover {
+      background-color: #ffffff;
+      color: #FF1e00;
+    }
+  }
 }
 
 #login form {
@@ -152,6 +166,7 @@
 	overflow: hidden;
 	transition: transform 0.6s ease-in-out;
 	z-index: 100;
+  color: white;
 }
 
 .container-login.right-panel-active .overlay-container{
@@ -159,9 +174,9 @@
 }
 
 .overlay {
-	background: #FF4B2B;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF4B2B);
-	background: linear-gradient(to right, #FF4B2B, #FF4B2B);
+	background: #ff1e00;
+	background: -webkit-linear-gradient(to right, #ff1e00, #ff1e00);
+	background: linear-gradient(to right, #FF1e00, #ff1e00);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -199,6 +214,10 @@
 
 .container-login.right-panel-active .overlay-left {
 	transform: translateX(0);
+}
+
+#reglog h1 {
+  color: white;
 }
 
 .overlay-right {
