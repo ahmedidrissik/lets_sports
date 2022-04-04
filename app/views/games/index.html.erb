@@ -1,13 +1,13 @@
 <section id="game-index">
   <div class="cotainer toto">
     <h1 class="text-center py-3"><strong>Parties en cours</strong></h1>
-    <%= link_to "Créer une partie",new_game_path, class: "btn btn-outline-primary game mx-4" %>
+    <%= link_to "Créer une partie",new_game_path, class: "btn btn-outline-primary game mx-4", id:"btnblk" %>
   </div>
   <div class="container">
     <div class="row">
       <% @games.each do |game| %>
       <div class="card border-primary col-12 mb-3 col-sm-12">
-        <div class="card-header d-flex justify-content-between">
+        <div class="card-header d-flex justify-content-between" style="padding-bottom: 0px;">
           <div class="d-flex">
             <i class="fa-solid fa-calendar-days"></i>
             <p><%= game.created_at.strftime('%d/%m/%Y') %></p>
@@ -25,7 +25,7 @@
                 class="avatar-large" alt="">
             </div>
             <div class="col-md-9">
-              <h4 class="card-title"><%= game.title %></h4>
+              <h3 class="card-title"><strong><%= game.title %></strong></h3>
               <div class="game-date">
                 <i class="fa-solid fa-calendar-days"></i>
                 <p><%= game.date.strftime('%d/%m/%Y') %> </p>
@@ -38,7 +38,7 @@
                 <i class="fa-solid fa-map-location"></i>
                 <p><%= game.location.name + " - " + game.location.address + " " + game.location.city %></p>
               </div>
-              <%= link_to "Voir détails",game_path(game), class: "btn btn-outline-primary game-details" %>
+              <%= link_to "Voir détails",game_path(game), class: "btn btn-outline-primary game-details", id:"btnblk" %>
             </div>
           </div>
         </div>

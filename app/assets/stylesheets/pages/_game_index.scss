@@ -1,6 +1,7 @@
 #game-index{
   p {
     margin-left: 8px;
+    margin-bottom: 4px;
   }
   .game-hour{
     display: flex;
@@ -25,5 +26,16 @@
     position: absolute;
     bottom: 32px;
     right: 32px;
+  }
+}
+
+#btnblk {
+  color: #000000 !important;
+  font-weight: 800;
+  border: #000000;
+  background-color: white;
+  &:hover {
+    color: white !important;
+    background-color: black;
   }
 }

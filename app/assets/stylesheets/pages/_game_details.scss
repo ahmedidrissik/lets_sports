@@ -7,3 +7,21 @@
 .container-game-details h3 {
   text-align: center;
 }
+
+#annulation {
+  color: #7b8ab8;
+  background-color: #eee !important;
+  &:hover {
+    color: #eee;
+    background-color: #7b8ab8 !important;
+  }
+}
+
+#confirmation {
+  color: #7b8ab8;
+  background-color: #eee !important;
+  &:hover {
+    color: #eee;
+    background-color: #7b8ab8 !important;
+  }
+}
