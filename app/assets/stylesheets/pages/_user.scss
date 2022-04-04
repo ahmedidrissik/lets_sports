@@ -136,3 +136,22 @@ margin: 0;
     background-color: #eee !important;
   }
 }
+
+#attente-link h3 {
+  padding: 2px;
+  padding-inline-start: 16px;
+  color: #eee;
+  background-color: #7b8ab8 !important;
+  border-radius: 4px;
+  &:hover {
+    color: #7b8ab8;
+    background-color: #eee !important;
+  }
+}
+
+#profilegames {
+  height: 200px;
+  h5{
+    font-weight: 500;
+  }
+}
