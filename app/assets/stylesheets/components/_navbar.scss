@@ -1,1 +1,42 @@
 @import "config/bootstrap.min";
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: #FF1e00;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 60px;
+  background-color: aliceblue;
+}
+
+.navbar-light .nav-link {
+  color: #FF1e00;
+  border-radius: 30px;
+  padding-inline-end: 10px;
+  background-color: white;
+}
+
+#login-btn a {
+  color: #000000 !important;
+  font-weight: 800;
+  border: #000000;
+  &:hover {
+    color: white !important;
+    background-color: black;
+  }
+}
+
+a.home-btn  {
+  color: #000000 !important;
+  font-weight: 800;
+  border: #000000;
+  &:hover {
+    color: white !important;
+    background-color: black;
+  }
+}

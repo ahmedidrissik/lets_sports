@@ -1,0 +1,29 @@
+#game-index{
+  p {
+    margin-left: 8px;
+  }
+  .game-hour{
+    display: flex;
+    position: relative;
+    p{
+      display: inline-block;
+    }
+  }
+  .game-location{
+    display: flex;
+    p{
+      display: inline-block;
+    }
+  }
+  .game-date{
+    display: flex;
+    p{
+      display: inline-block;
+    }
+  }
+  .game-details{
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+  }
+}
