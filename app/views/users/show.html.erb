@@ -52,27 +52,32 @@
        <div class="col-md-7">
         <div class="container">
           <div class="row" id="annonces">
-            <div class="col-md-4" >
-            <p>Annonce 1</p>
-            </div>
-            <div class="col-md-4" >
-            <p>Annonce 2</p>
-            </div>
-            <div class="col-md-4" >
-            <p>Annonce 3</p>
-            </div>
+           <% current_user.games.each do |game| %>
+              <div class="col-md-6" >
+                <div class="card">
+                  <div class="card-body" id="profilegames">
+                    <h5 class="card-title"><%= game.title %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= game.date %></h6>
+                    <p class="card-text"><%= game.description %></p>
+                    <%= link_to "Voir", game_path(game) %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
           </div>
           <div class="row d-none" id="participations">
-            <div class="col-md-4" >
-            <p>Participation 1</p>
+          <% current_user.bookings.each do |booking| %>
+            <div class="col-md-6" >
+              <div class="card">
+                  <div class="card-body" id="profilegames">
+                    <h5 class="card-title"><%= booking.game.title %></h5>
+                    <i class="fa-solid fa-clock"></i><h6 class="card-subtitle mb-2 text-muted"><%= booking.game.date %> </h6>
+                    <p class="card-text"><%= booking.game.description %></p>
+                    <%= link_to "Voir", game_path(booking.game) %>
+                  </div>
+                </div>
             </div>
-            <div class="col-md-4" >
-            <p>Participation 1</p>
-            </div>
-            <div class="col-md-4" >
-            <p>Participation 1</p>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
