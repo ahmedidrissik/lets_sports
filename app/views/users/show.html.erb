@@ -57,7 +57,7 @@
                 <div class="card">
                   <div class="card-body" id="profilegames">
                     <h5 class="card-title"><%= game.title %></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><%= game.date %></h6>
+                    <i class="fa-solid fa-clock"></i><h6 class="card-subtitle mb-2 text-muted"><%= game.date.strftime("%d %m - %H:%M") %></h6>
                     <p class="card-text"><%= game.description %></p>
                     <%= link_to "Voir", game_path(game) %>
                   </div>
@@ -71,7 +71,7 @@
               <div class="card">
                   <div class="card-body" id="profilegames">
                     <h5 class="card-title"><%= booking.game.title %></h5>
-                    <i class="fa-solid fa-clock"></i><h6 class="card-subtitle mb-2 text-muted"><%= booking.game.date %> </h6>
+                    <i class="fa-solid fa-clock"></i><h6 class="card-subtitle mb-2 text-muted"><%= booking.game.date.strftime("%d %m - %H:%M") %> </h6>
                     <p class="card-text"><%= booking.game.description %></p>
                     <%= link_to "Voir", game_path(booking.game) %>
                   </div>
