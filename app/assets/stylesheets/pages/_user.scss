@@ -112,3 +112,27 @@ margin: 0;
 .dark-color {
   color: #20247b;
 }
+
+#annonce-link h3 {
+  padding: 2px;
+  padding-inline-start: 16px;
+  color: #eee;
+  background-color: #7b8ab8 !important;
+  border-radius: 4px;
+  &:hover {
+    color: #7b8ab8;
+    background-color: #eee !important;
+  }
+}
+
+#participation-link h3 {
+  padding: 2px;
+  padding-inline-start: 16px;
+  color: #eee;
+  background-color: #7b8ab8 !important;
+  border-radius: 4px;
+  &:hover {
+    color: #7b8ab8;
+    background-color: #eee !important;
+  }
+}
