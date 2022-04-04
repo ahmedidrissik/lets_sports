@@ -2,8 +2,8 @@
   <div class="container-login" id="login">
 	<div class="form-container sign-in-container">
 		<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <h2>Connectez vous</h2>
-			  <span>entrez votre email pour vous identifier</span>
+        <h2><strong>Connectez vous</strong></h2>
+			  <span>Entrez votre email pour vous identifier</span>
         <div class="hidden-label">
         <%= f.input :email,
                   required: false,
@@ -20,9 +20,9 @@
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-right" id="register">
-				<h1>Toujours pas un membre ?</h1>
+				<h1>Toujours pas membre ?</h1>
 				<p>Creer votre compte et rejoignez notre communauté !</p>
-        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+        <%- if devise_mapping.registerable? && controller_name != 'registrations' %><br><br><br>
           <%= link_to "Creer un compte", new_registration_path(resource_name), class: "ghost" %><br />
         <% end %>
 			</div>
