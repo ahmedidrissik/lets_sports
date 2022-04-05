@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_30_123629) do
+ActiveRecord::Schema.define(version: 2022_04_05_162034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,23 @@ ActiveRecord::Schema.define(version: 2022_03_30_123629) do
     t.integer "player_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "event_id"
+    t.index ["event_id"], name: "index_bookings_on_event_id"
     t.index ["game_id"], name: "index_bookings_on_game_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.text "description"
+    t.string "title"
+    t.datetime "date"
+    t.integer "capacity"
+    t.bigint "sport_id", null: false
+    t.bigint "location_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "creator_id"
+    t.index ["location_id"], name: "index_events_on_location_id"
+    t.index ["sport_id"], name: "index_events_on_sport_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -62,7 +78,7 @@ ActiveRecord::Schema.define(version: 2022_03_30_123629) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.integer "rating"
+    t.integer "rating", default: 0
     t.string "phone_number"
     t.integer "age"
     t.text "bio"
@@ -72,6 +88,9 @@ ActiveRecord::Schema.define(version: 2022_03_30_123629) do
 
   add_foreign_key "bookings", "games"
   add_foreign_key "bookings", "users", column: "player_id"
+  add_foreign_key "events", "locations"
+  add_foreign_key "events", "sports"
+  add_foreign_key "events", "users", column: "creator_id"
   add_foreign_key "games", "locations"
   add_foreign_key "games", "sports"
   add_foreign_key "games", "users", column: "creator_id"
