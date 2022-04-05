@@ -4,18 +4,18 @@
 
 #carousel {
   background: rgb(235, 189, 189);
-  background: radial-gradient(
-    circle,
-    rgba(73, 125, 236, 0.335) 0%,
-    rgba(33, 142, 214, 0.722) 33%,
-    rgb(2, 65, 107) 90%
-  );
+  background: radial-gradient(circle,
+      rgba(73, 125, 236, 0.335) 0%,
+      rgba(33, 142, 214, 0.722) 33%,
+      rgb(2, 65, 107) 90%);
   position: relative;
   height: 70vh;
   z-index: 2;
+
   .carousel-inner {
     overflow: visible;
   }
+
   .hero-img {
     position: relative;
     display: block;
@@ -28,15 +28,18 @@
     animation-duration: 5s;
     animation-iteration-count: 1;
   }
+
   .hero-img:hover {
     transform: scale(1.1);
     -webkit-filter: drop-shadow(40px 15px 10px rgba(0, 0, 0, 0.3));
     filter: drop-shadow(40px 15px 10px rgba(0, 0, 0, 0.3));
   }
+
   .hero-fix {
     position: absolute;
     width: 100%;
   }
+
   .hero-text {
     position: absolute;
     z-index: 1;
@@ -44,6 +47,7 @@
     width: 25%;
     top: 10vh;
     left: 10%;
+
     h3 {
       font-family: "Carter One", cursive;
       font-size: 3em;
@@ -51,16 +55,19 @@
       padding-bottom: 16px;
       border-bottom: 5px solid rgba(255, 0, 21, 0.918);
     }
+
     h5 {
       font-size: 2em;
       text-shadow: 0 0 5px white;
       font-weight: 900;
     }
   }
+
   .cta-btn-right {
     top: 60vh;
     right: 10%;
     position: absolute;
+
     p {
       text-shadow: 2px 2px 5px white;
       font-family: "Carter One", cursive;
@@ -69,6 +76,7 @@
       color: rgb(32, 32, 32);
       position: relative;
     }
+
     a {
       border: 1px solid black;
       z-index: 6;
@@ -82,12 +90,14 @@
       color: rgb(5, 5, 5);
       transition: all 0.5s ease-in-out;
     }
+
     a:hover {
       transform: scale(1.5);
       color: #fff;
       background-color: black;
     }
   }
+
   .cta-btn-left {
     p {
       text-shadow: 2px 2px 5px white;
@@ -97,6 +107,7 @@
       color: rgb(32, 32, 32);
       position: relative;
     }
+
     a {
       border: 1px solid black;
       z-index: 6;
@@ -110,35 +121,44 @@
       background-color: #fff;
       transition: all 0.5s ease-in-out;
     }
+
     a:hover {
       transform: scale(1.5);
       color: #fff;
       background-color: black;
     }
+
     top: 60vh;
     left: 10%;
     position: absolute;
   }
+
   .move {
     animation-name: move;
     animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
   }
+
   @keyframes move {
     0% {
       transform: scale(0.3, 0.3) translateY(100px);
     }
+
     10% {
       transform: scale(0.5, 0.5) translateY(80px);
     }
+
     50% {
       transform: scale(0.9, 0.9) translateY(20px);
     }
+
     57% {
       transform: scale(1, 1) translateY(-10px);
     }
+
     64% {
       transform: scale(1.4, 1.4) translateY(5px);
     }
+
     100% {
       transform: scale(1, 1) translateY(0);
     }
@@ -151,3 +171,6 @@
   }
 }
 
+.feedback {
+  text-align: center;
+}
