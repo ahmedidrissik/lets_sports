@@ -54,14 +54,12 @@
           </strong>
         </div>
         <div>
-          <% game.bookings.each do |b| %>
-            <% b.game.user.rating.times do %>
+            <% game.user.rating.times do %>
               <i class="fa-solid fa-star"></i>
             <% end %>
-            <% (5 - b.game.user.rating).times do %>
+            <% (5 - game.user.rating).times do %>
               <i class="fa-regular fa-star"></i>
             <% end %>
-          <% end %>
         </div>
       </div>
     </div>
@@ -84,8 +82,8 @@
                     <p>
                       <%= "#{b.status} " %>
                         <% if is_creator %>
-                          <button class="btnv">Valider</button>
-                          <button class="btnx">Refuser</button>
+                          <a class="btn btnv">Valider</a>
+                          <a class="btn btnx">Refuser</a>
                         <% end %>
                     </p>
                 </div>
