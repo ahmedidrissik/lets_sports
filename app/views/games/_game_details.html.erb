@@ -1,15 +1,99 @@
 <div class="container-game-details" id="game-details">
-  <h3> <%= game.sport.name %> </h3>
-        <div> <strong><%= game.title %></strong> </div>
-        <div>creator : <%= game.user.name %></div>
-        <div> <%= game.description %> </div>
-        <div>  <i class="fa-solid fa-clock"></i> <%= game.date %> </div>
-        <div>
-          <i class="fa-solid fa-location-dot"></i>
-          <%= game.location.name %>,
+  <h3>
+    <%= game.sport.name %>
+  </h3>
+  <div id="banniere" style="background-image: url('<%= image_path "paysage_foot.jpeg" %>')"></div>
+  <div id="details">
+    <div class="date-container">
+      <div class="date-wrapper">
+        <i class="fa-solid fa-clock"></i>
+        <span class="__month">
+          <%= game.date.strftime("%B") %>
+        </span>
+        <span class="__date">
+          <%= game.date.strftime("%d") %>
+        </span>
+        <span class="__day">
+          <%= game.date.strftime("%A") %>
+        </span>
+        <span class="__time">
+          <%= game.date.strftime("%H h %M") %>
+        </span>
+      </div>
+    </div>
+    <div class="centrer d-flex flex-column">
+      <div>
+        <h2><strong><%= game.title %></strong></h2>
+      </div>
+      <div>
+        <i class="fa-solid fa-location-dot"></i>
+        <%= game.location.name %>,
           <%= game.location.address %>,
-          <%= game.location.city %>
+            <%= game.location.city %>
+      </div>
+      <%= game.bookings.count %>/<%= game.capacity %> players
+          : <%= game.status %>
+    </div>
+
+    <div class="creator-container">
+      <div class="creator-description">
+        <div class="bubble">
+          <span></span>
+          <p>
+            <%= game.description %>
+          </p>
         </div>
-        <div> <%= game.bookings.count %>/<%= game.capacity %> players </div>
-        <div id="game-data" data-booking-id= <%= @booking_id %> data-game-id="<%= @game.id %>" data-player-id="<%= current_user.id %>"> status : <%= game.status %> </div>
+      </div>
+      <div class="creator-avatar">
+        <%= image_tag "maradona.jpeg" %>
+      </div>
+      <div class="name-stars d-flex flex-column">
+        <div>
+          <strong>
+            <%= game.user.name.capitalize %>
+          </strong>
+        </div>
+        <div>
+          <% game.bookings.each do |b| %>
+            <% b.game.user.rating.times do %>
+              <i class="fa-solid fa-star"></i>
+            <% end %>
+            <% (5 - b.game.user.rating).times do %>
+              <i class="fa-regular fa-star"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <% is_creator=current_user==game.user %>
+        <% game.bookings.each do |b| %>
+          <div class="col-md-4">
+            <div class="player-card">
+              <%= image_tag "maradona.jpeg" %>
+                <div class="player-card-content">
+                  <%= "#{b.user.name}" %>
+                    <% b.user.rating.times do %>
+                      <i class="fa-solid fa-star"></i>
+                    <% end %>
+                    <% (5 - b.user.rating).times do %>
+                      <i class="fa-regular fa-star"></i>
+                    <% end %>
+                    <p>
+                      <%= "#{b.status} " %>
+                        <% if is_creator %>
+                          <button class="btnv">Valider</button>
+                          <button class="btnx">Refuser</button>
+                        <% end %>
+                    </p>
+                </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+  <div data-game-actions-target="data" id="game-data" data-booking-id=<%=@booking_id %> data-game-id="<%= @game.id %>"
+      data-player-id="<%= current_user.id %>"> </div>
 </div>
