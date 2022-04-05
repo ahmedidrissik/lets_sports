@@ -23,7 +23,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    @booking_id = @game.bookings.blank? ? 0 : @game.bookings.where(user: current_user).first.id
+    @booking_id = @game.bookings.where(user: current_user).blank? ? 0 : @game.bookings.where(user: current_user).first.id
   end
 
   def update
