@@ -7,3 +7,176 @@
 .container-game-details h3 {
   text-align: center;
 }
+
+.player-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  border: 1px solid rgb(235,235,235);
+  height: 88px;
+  border-radius: 16px;
+}
+
+.player-card .player-card-content {
+  flex-grow: 1;
+
+  i {
+    color: goldenrod;
+  }
+}
+
+.player-card img {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  margin: 8px;
+}
+
+.btnv {
+  height: 24px;
+  width: 64px;
+  background-color: green;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.btnx {
+  height: 24px;
+  width: 64px;
+  background-color: red;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.bubble {
+  background-color: #F2F2F2;
+  border-radius: 8px;
+  box-shadow: 4px 0px 4px #B2B2B2;
+  height: 80px;
+  margin: 20px;
+  width: 400px;
+  padding: 8px;
+  position: relative;
+  p {
+    position: relative;
+    z-index: 3;
+  }
+  span {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #f2f2f2;
+    z-index: 2;
+    transform: rotate(45deg);
+    left: -8px;
+    top:16px;
+  }
+}
+
+.creator-container img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin-top: 12px;
+}
+
+.creator-container {
+  margin-bottom: 8px;
+  height: 80px;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "creator-avatar creator-description creator-description"
+    "name-stars creator-description creator-description"
+    ". . .";
+}
+
+.creator-description { grid-area: creator-description; }
+
+.creator-avatar { grid-area: creator-avatar; }
+
+.name-stars {
+  grid-area: name-stars;
+  div {
+    width: 100%;
+    i {
+      color: goldenrod;
+    }
+  }
+}
+
+
+#details {
+  display: flex;
+  margin: 24px 8px;
+  border: solid #F2F2F2;
+  text-align: center;
+  border-radius: 8px;
+  width: 100%;
+}
+
+#banniere {
+  width: 100%;
+  height: 180px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.centrer {
+  padding-top: 24px;
+  display: flex;
+  h2 {
+    color: black;
+  }
+}
+
+.date-container {
+  top: 32px;
+  left: 32px;
+  height: 130px;
+  width: 90px;
+  background: #f7f7f7;
+  border-right: 2px dotted #ddd;
+  text-align: center;
+  display: table;
+  // vertical-align: middle;
+  padding: 20px 20px;
+}
+
+  .date-wrapper {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .__month, .__day, .__date {
+    display: block;
+
+    vertical-align: middle;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #333;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    padding: 1px 0;
+    width: 100%;
+
+  }
+
+  .__date {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .__time {
+    display: block;
+    font-size: 12px;
+    border-top: 1px solid #666;
+    margin-top: 3px;
+    padding-top: 3px;
+    font-weight: bold;
+  }
