@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :games, only: [:index, :new, :create, :show, :update, :destroy]
   resources :bookings, only: [:create, :destroy]
   resources :locations, only: [:create]
+  resources :events, only: [:index, :new, :create, :show, :update, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

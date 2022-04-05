@@ -4,7 +4,7 @@
       <div class="row align-items-center flex-row-reverse">
         <div class="col-md-6">
             <div class="about-text go-to">
-                <h3 class="dark-color"><%= @user.name %></h3>
+                <%= f.input :name, placeholder: "Nom", label: "Nom" %>
                 <%= f.input :bio, placeholder: "Bio", label: "Bio" %>
                 <div class="row about-list">
                     <div class="col-md-6">

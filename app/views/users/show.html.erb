@@ -8,67 +8,79 @@
                 <h6 class="theme-color lead">Bio</h6>
                 <p><%= @user.bio %></p>
                 <div class="row about-list">
-                    <div class="col-md-6">
-                        <div class="media">
-                            <label>Age</label>
-                            <p><%= @user.age %></p>
-                        </div>
-                        <div class="media">
-                            <label>Rating</label>
-                            <p><%= @user.rating %> Stars</p>
-                        </div>
+                  <div class="col-md-6">
+                    <div class="media">
+                      <label>Age</label>
+                      <p><%= @user.age %></p>
+                    </div>
+                    <label>Rating</label><br>
+                      <%= @user.rating %>
+                      <% if @user != current_user %>
+                      <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                      </div>
+                      <% end %>
                     </div>
                     <div class="col-md-6">
-                        <div class="media">
-                            <label>E-mail</label>
-                            <p><%= @user.email %></p>
-                        </div>
-                        <div class="media">
-                            <label>Telephone</label>
-                            <p><%= @user.phone_number %></p>
-                        </div>
-                       <br>
-                        <%= link_to "Editer profile", new_user_path(current_user), id: "edit-btn" %>
+                      <div class="media">
+                        <label>E-mail</label>
+                        <p><%= @user.email %></p>
+                      </div>
+                      <div class="media">
+                        <label>Telephone</label>
+                        <p><%= @user.phone_number %></p>
+                      </div>
+                      <br>
+                      <%= link_to "Editer profile", new_user_path(current_user), id: "edit-btn" %>
                     </div>
+                  </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-          <div class="about-avatar">
-              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt="">
+            <div class="col-md-6">
+              <div class="about-avatar">
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt="">
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
   </div>
   <div class="container" style="margin-top: 48px;">
     <div class="row">
       <div class="col-md-4" id="tabs">
-      <a id="annonce-link"><h3><strong>Vos annonces</strong></h3></a><br>
-      <a id="participation-link"><h3><strong>Vos participations</strong></h3></a><br>
+       <a id="annonce-link"><h3><strong>Vos annonces</strong></h3></a><br>
+       <a id="participation-link"><h3><strong>Vos participations</strong></h3></a><br>
       </div>
       <div class="col-md-1"></div>
-       <div class="col-md-7">
-        <div class="container">
-          <div class="row" id="annonces">
-           <% current_user.games.each do |game| %>
-              <div class="col-md-6" >
-                <div class="card">
-                  <div class="card-body" id="profilegames">
-                    <h5 class="card-title"><%= game.title %></h5>
-                    <i class="fa-solid fa-clock"></i><h6 class="card-subtitle mb-2 text-muted"><%= game.date.strftime("%d %m - %H:%M") %></h6>
-                    <p class="card-text"><%= game.description %></p>
-                    <%= link_to "Voir annonce", game_path(game), id: "voir-btn" %>
+        <div class="col-md-7">
+          <div class="container">
+            <div class="row" id="annonces">
+              <% current_user.games.each do |game| %>
+                <div class="col-md-6" >
+                  <div class="card">
+                    <div class="card-body" id="profilegames">
+                      <h5 class="card-title"><%= game.title %></h5>
+                      <i class="fa-solid fa-clock"></i><h6 class="card-subtitle mb-2 text-muted"><%= game.date.strftime("%d %m - %H:%M") %></h6>
+                      <p class="card-text"><%= game.description %></p>
+                      <%= link_to "Voir annonce", game_path(game), id: "voir-btn" %>
+                    </div>
                   </div>
                 </div>
-              </div>
-            <% end %>
-          </div>
-          <div class="row d-none" id="participations">
-          <% current_user.bookings.each do |booking| %>
-            <div class="col-md-6" >
-              <div class="card">
+              <% end %>
+            </div>
+            <div class="row d-none" id="participations">
+              <% current_user.bookings.each do |booking| %>
+              <div class="col-md-6" >
+                <div class="card">
                   <div class="card-body" id="profilegames">
                     <h5 class="card-title"><%= booking.game.title %></h5>
                     <i class="fa-solid fa-clock"></i><h6 class="card-subtitle mb-2 text-muted"><%= booking.game.date.strftime("%d %m - %H:%M") %> </h6>
@@ -76,9 +88,9 @@
                     <%= link_to "Voir annonce", game_path(booking.game), id: "voir-btn" %>
                   </div>
                 </div>
+              </div>
+            <% end %>
             </div>
-          <% end %>
-        </div>
       </div>
     </div>
   </div>
