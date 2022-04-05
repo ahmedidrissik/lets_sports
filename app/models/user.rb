@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :games, through: :bookings
   has_many :games, foreign_key: :creator_id
   has_one_attached :photo
+  has_many :events, through: :bookings
+  has_many :events, foreign_key: :creator_id
 end
