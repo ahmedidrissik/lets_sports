@@ -2,8 +2,8 @@
    <div class="container-login right-panel-active" id="login">
     <div class="form-container sign-up-container ">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <h2>Créer un compte</h2>
-        <span> Veuillez choisir un Email et un mot de passe</span>
+        <h2><strong>Créer un compte</strong></h2>
+        <span> Choisissez un Email et un mot de passe</span>
         <div class="hidden-label">
           <%= f.input :email,
                   required: true,
@@ -15,7 +15,7 @@
                   input_html: { autocomplete: "new-password", placeholder: "Mot de passe" } %>
         <%= f.input :password_confirmation,
                   required: true,
-                  input_html: { autocomplete: "new-password", placeholder: "Confirmer le mot de passe" } %>
+                  input_html: { autocomplete: "new-password", placeholder: "Confirmer mot de passe" } %>
         <%= f.button :submit, "Creer mon compte", class: "loglog" %>
         </div>
       <% end %>
@@ -24,9 +24,10 @@
     <div class="overlay-container">
       <div class="overlay">
         <div class="overlay-panel overlay-left" id="reglog">
+        <br>
           <h1>Bienvenue !</h1>
           <p>Entrez vos données personnelles et rejoignez notre communauté</p><br>
-          <p>Vous avez deja un compte ?</p>
+          <p>Vous avez deja un compte ?</p><br>
           <%- if controller_name != 'sessions' %>
             <%= link_to "Se connecter", new_session_path(resource_name), class: "ghost" %><br />
           <% end %>

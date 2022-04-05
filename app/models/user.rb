@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :bookings
+  has_many :bookings, foreign_key: :player_id
   has_many :games, through: :bookings
   has_many :games, foreign_key: :creator_id
 end

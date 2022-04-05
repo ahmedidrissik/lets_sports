@@ -1,18 +1,49 @@
-<main>
-<div class="container">
+<section id="game-index">
   <div class="cotainer toto">
-    <h1 class = "text-center py-3">Parties recentes</h1>
-    <button type="button" class="btn btn-outline-primary game"><%= link_to "Creer une partie", new_game_path %></button>
+    <h1 class="text-center py-3"><strong>Parties en cours</strong></h1>
+    <%= link_to "Créer une partie",new_game_path, class: "btn btn-outline-primary game mx-4", id:"btnblk" %>
   </div>
-  <div class="row">
-    <div class="card border-primary col-12 mb-3 col-sm-12">
-      <div class="card-header">Date de creation</div>
+  <div class="container">
+    <div class="row">
+      <% @games.each do |game| %>
+      <div class="card border-primary col-12 mb-3 col-sm-12">
+        <div class="card-header d-flex justify-content-between" style="padding-bottom: 0px;">
+          <div class="d-flex">
+            <i class="fa-solid fa-calendar-days"></i>
+            <p><%= game.created_at.strftime('%d/%m/%Y') %></p>
+          </div>
+          <div>
+            <p> <strong> <%= game.bookings.count %> confirmés sur <%= game.capacity %>
+            </strong></p>
+          </div>
+        </div>
         <div class="card-body">
-          <h4 class="card-title">Titre de l'annonce</h4>
-          <p class="card-text">Details de l'annonce</p>
-          <%= link_to "Details", games_path %>
+          <div class="row">
+            <div class="col-md-3">
+              <img
+                src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1643974180/sux8gkvgvmtj2smi2z2r.jpg"
+                class="avatar-large" alt="">
+            </div>
+            <div class="col-md-9">
+              <h3 class="card-title"><strong><%= game.title %></strong></h3>
+              <div class="game-date">
+                <i class="fa-solid fa-calendar-days"></i>
+                <p><%= game.date.strftime('%d/%m/%Y') %> </p>
+              </div>
+              <div class="game-hour">
+                <i class="fa-solid fa-clock"></i>
+                <p><%= game.date.strftime('%Hh %Mmin') %> </p>
+              </div>
+              <div class="game-location">
+                <i class="fa-solid fa-map-location"></i>
+                <p><%= game.location.name + " - " + game.location.address + " " + game.location.city %></p>
+              </div>
+              <%= link_to "Voir détails",game_path(game), class: "btn btn-outline-primary game-details", id:"btnblk" %>
+            </div>
+          </div>
         </div>
       </div>
+      <% end %>
     </div>
   </div>
-</main>
+</section>

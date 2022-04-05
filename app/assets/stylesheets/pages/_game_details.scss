@@ -180,3 +180,20 @@
     padding-top: 3px;
     font-weight: bold;
   }
+#annulation {
+  color: #7b8ab8;
+  background-color: #eee !important;
+  &:hover {
+    color: #eee;
+    background-color: #7b8ab8 !important;
+  }
+}
+
+#confirmation {
+  color: #7b8ab8;
+  background-color: #eee !important;
+  &:hover {
+    color: #eee;
+    background-color: #7b8ab8 !important;
+  }
+}
