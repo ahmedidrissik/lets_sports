@@ -1,0 +1,37 @@
+<div class="section about-section gray-bg" id="bio">
+  <%= simple_form_for(@user, url: user_path(@user)) do |f| %>
+    <div class="container">
+      <div class="row align-items-center flex-row-reverse">
+        <div class="col-md-6">
+            <div class="about-text go-to">
+                <h3 class="dark-color"><%= @user.name %></h3>
+                <%= f.input :bio, placeholder: "Bio", label: "Bio" %>
+                <div class="row about-list">
+                    <div class="col-md-6">
+                        <div class="media">
+                            <%= f.input :age, placeholder: "Age", label: "Age" %>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="media">
+                            <%= f.input :email, placeholder: "Email", label: "Email" %>
+                        </div>
+                        <div class="media">
+                            <%= f.input :phone_number, placeholder: "Telephone", label: "Telephone" %>
+                        </div>
+                       <br>
+                        <%= f.button :submit, "Enregister", id: "edit-btn"%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+          <div class="about-avatar">
+              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt="">
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>

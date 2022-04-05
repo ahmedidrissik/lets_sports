@@ -28,7 +28,7 @@
                             <p><%= @user.phone_number %></p>
                         </div>
                        <br>
-                        <a href="#">Editer le profil</a>
+                        <%= link_to "Editer profile", new_user_path(current_user), id: "edit-btn" %>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                     <h5 class="card-title"><%= game.title %></h5>
                     <i class="fa-solid fa-clock"></i><h6 class="card-subtitle mb-2 text-muted"><%= game.date.strftime("%d %m - %H:%M") %></h6>
                     <p class="card-text"><%= game.description %></p>
-                    <%= link_to "Voir", game_path(game) %>
+                    <%= link_to "Voir annonce", game_path(game), id: "voir-btn" %>
                   </div>
                 </div>
               </div>
@@ -73,7 +73,7 @@
                     <h5 class="card-title"><%= booking.game.title %></h5>
                     <i class="fa-solid fa-clock"></i><h6 class="card-subtitle mb-2 text-muted"><%= booking.game.date.strftime("%d %m - %H:%M") %> </h6>
                     <p class="card-text"><%= booking.game.description %></p>
-                    <%= link_to "Voir", game_path(booking.game) %>
+                    <%= link_to "Voir annonce", game_path(booking.game), id: "voir-btn" %>
                   </div>
                 </div>
             </div>

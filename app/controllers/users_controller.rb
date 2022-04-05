@@ -13,6 +13,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def new
+    @user = current_user if user_signed_in?
+  end
+
 
   private
 
