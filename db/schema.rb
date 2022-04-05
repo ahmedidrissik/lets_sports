@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2022_04_05_143334) do
     t.bigint "location_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "creator_id"
     t.index ["location_id"], name: "index_events_on_location_id"
     t.index ["sport_id"], name: "index_events_on_sport_id"
   end
@@ -87,6 +88,7 @@ ActiveRecord::Schema.define(version: 2022_04_05_143334) do
   add_foreign_key "bookings", "users", column: "player_id"
   add_foreign_key "events", "locations"
   add_foreign_key "events", "sports"
+  add_foreign_key "events", "users", column: "creator_id"
   add_foreign_key "games", "locations"
   add_foreign_key "games", "sports"
   add_foreign_key "games", "users", column: "creator_id"
