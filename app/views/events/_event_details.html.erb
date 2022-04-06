@@ -1,16 +1,107 @@
 <div class="container-game-details" id="game-details">
-  <h3> <%= event.sport.name %> </h3>
-        <div> <strong><%= event.title %></strong> </div>
-        <div>creator : <%= event.user.name %></div>
-        <div> <%= event.description %> </div>
-        <div>  <i class="fa-solid fa-clock"></i> <%= event.date %> </div>
-        <div>
-          <i class="fa-solid fa-location-dot"></i>
-          <%= event.location.name %>,
+  <h3>
+    <%= event.sport.name %>
+  </h3>
+  <div id="banniere" style="background-image: url('<%= event.sport.photo.url %>')"></div>
+  <div id="details">
+    <div class="date-container">
+      <div class="date-wrapper">
+        <i class="fa-solid fa-clock"></i>
+        <span class="__month">
+          <%= event.date.strftime("%B") %>
+        </span>
+        <span class="__date">
+          <%= event.date.strftime("%d") %>
+        </span>
+        <span class="__day">
+          <%= event.date.strftime("%A") %>
+        </span>
+        <span class="__time">
+          <%= event.date.strftime("%H h %M") %>
+        </span>
+      </div>
+    </div>
+    <div class="centrer d-flex flex-column">
+      <div>
+        <h2><strong><%= event.title %></strong></h2>
+      </div>
+      <div>
+        <i class="fa-solid fa-location-dot"></i>
+        <%= event.location.name %>,
           <%= event.location.address %>,
-          <%= event.location.city %>
+            <%= event.location.city %>
+      </div>
+      <%= event.bookings.count %>/<%= event.capacity %> players
+
+    </div>
+
+    <div class="creator-container">
+      <div class="creator-description">
+        <div class="bubble">
+          <span></span>
+          <p>
+            <%= event.description %>
+          </p>
         </div>
-        <div> <%= event.bookings.count %>/<%= event.capacity %> players </div>
-        <div id="game-data" data-booking-id= <%= @booking_id %> data-event-id="<%= @event.id %>" data-player-id="<%= current_user.id %>">
+      </div>
+      <div class="creator-avatar">
+         <% if event.user.photo.key == nil %>
+            <%= image_tag "https://i.pravatar.cc/300", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+         <% else %>
+              <%= cl_image_tag event.user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+         <% end %>
+      </div>
+      <div class="name-stars d-flex flex-column">
+        <div>
+          <strong>
+            <%= event.user.name.capitalize %>
+          </strong>
         </div>
+        <div>
+            <% event.user.rating.times do %>
+              <i class="fa-solid fa-star"></i>
+            <% end %>
+            <% (5 - event.user.rating).times do %>
+              <i class="fa-regular fa-star"></i>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <% is_creator=current_user==event.user %>
+        <% event.bookings.each do |b| %>
+          <div class="col-md-4">
+            <div class="player-card">
+              <% if b.user.photo.key == nil %>
+                <%= image_tag "https://i.pravatar.cc/300", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+                <%= cl_image_tag b.user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% end %>
+                <div class="player-card-content">
+                  <%= "#{b.user.name}" %>
+                    <% b.user.rating.times do %>
+                      <i class="fa-solid fa-star"></i>
+                    <% end %>
+                    <% (5 - b.user.rating).times do %>
+                      <i class="fa-regular fa-star"></i>
+                    <% end %>
+                    <p>
+                      <%= "#{b.status} " %>
+                    </p>
+                    <div data-controller="request">
+                        <% if is_creator %>
+                          <a data-action="click->request#valider" class="btn btnv">Valider</a>
+                          <a data-action="click->request#refuser" class="btn btnx">Refuser</a>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+  <div data-event-actions-target="data" id="event-data" data-booking-id=<%=@booking_id %> data-event-id="<%= @event.id %>"
+      data-player-id="<%= current_user.id %>"> </div>
 </div>

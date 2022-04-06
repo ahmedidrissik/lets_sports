@@ -45,7 +45,11 @@
         </div>
       </div>
       <div class="creator-avatar">
-        <%= image_tag "maradona.jpeg" %>
+         <% if game.user.photo.key == nil %>
+            <%= image_tag "https://i.pravatar.cc/300", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= cl_image_tag game.user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+         <% end %>
       </div>
       <div class="name-stars d-flex flex-column">
         <div>
@@ -70,7 +74,11 @@
         <% game.bookings.each do |b| %>
           <div class="col-md-4">
             <div class="player-card">
-              <%= image_tag "maradona.jpeg" %>
+              <% if b.user.photo.key == nil %>
+                <%= image_tag "https://i.pravatar.cc/300", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+                <%= cl_image_tag b.user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% end %>
                 <div class="player-card-content">
                   <%= "#{b.user.name}" %>
                     <% b.user.rating.times do %>
@@ -79,13 +87,15 @@
                     <% (5 - b.user.rating).times do %>
                       <i class="fa-regular fa-star"></i>
                     <% end %>
-                    <p>
+                     <p>
                       <%= "#{b.status} " %>
-                        <% if is_creator %>
-                          <a class="btn btnv">Valider</a>
-                          <a class="btn btnx">Refuser</a>
-                        <% end %>
                     </p>
+                    <div data-id="<%= b.id %>" data-controller="request">
+                        <% if is_creator %>
+                          <a data-action="click->request#valider" class="btn btnv">Valider</a>
+                          <a data-action="click->request#refuser" class="btn btnx">Refuser</a>
+                        <% end %>
+                    </div>
                 </div>
             </div>
           </div>
