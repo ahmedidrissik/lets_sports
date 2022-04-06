@@ -1,8 +1,8 @@
 require "open-uri"
 require 'faker'
 p "Destroying Tabels"
-User.destroy_all
 Game.destroy_all
+User.destroy_all
 Location.destroy_all
 Sport.destroy_all
 p "destroy Ok"
@@ -14,7 +14,7 @@ p "destroy Ok"
 #---"age"
 #---"bio"
 #---rating
-p "Creating User"
+# p "Creating User"
 
 file1 = URI.open("https://avatars.githubusercontent.com/u/74985628?v=4")
 userAdmin = User.create!(name:"bididah",email:"hanfi@gmail.com" ,password:"123456",phone_number:"0661137987",age:27,bio:"I'am a person that loves Football",rating:[1,2,3,4,5].sample,admin: true)
@@ -24,7 +24,8 @@ userAdmin.photo.attach(io: file1, filename: 'nes.png', content_type: 'image/png'
 user1 = nil
 names = ['hamza','Ahmed','Mohamed',"Zakaria","Omar","Boris","HakiMi","Protegaw","Bididah"]
 9.times do  |i|
-  file = URI.open(Faker::Avatar.image)
+  p "Creating User #{names[i]}"
+  file = URI.open("https://i.pravatar.cc/300")
   user1 = User.create!(name:names[i],email:Faker::Internet.email ,password:"123456",phone_number:"0661137987",age:27,bio:"I'am a person that loves Football",rating:[1,2,3,4,5].sample)
   user1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 end
@@ -50,10 +51,24 @@ end
 # a Sport have :
 #---name
 p "Creating Sport"
-football = Sport.create!(name:"Football",photo:"paysage_foot.jpeg")
-tennis = Sport.create!(name:"Tennis",photo:"paysage_tennis.jpeg")
-basketball = Sport.create!(name:"Basketball",photo:"paysage_basket.jpeg")
-eSport = Sport.create!(name:"E-Sports",photo:"paysage_esport.jpeg")
+football_image = URI.open("app/assets/images/paysage_foot.jpeg")
+football = Sport.create!(name:"Football")
+football.photo.attach(io: football_image, filename: 'f.png', content_type: 'image/png')
+
+p "foot ok Sport"
+
+tennis_image = URI.open("app/assets/images/paysage_tennis.jpeg")
+tennis = Sport.create!(name:"Tennis")
+tennis.photo.attach(io: tennis_image, filename: 't.png', content_type: 'image/png')
+
+basketball_image = URI.open("app/assets/images/paysage_basket.jpeg")
+basketball = Sport.create!(name:"Basketball")
+basketball.photo.attach(io: basketball_image, filename: 'b.png', content_type: 'image/png')
+
+eSport_image = URI.open("app/assets/images/paysage_esport.jpeg")
+eSport = Sport.create!(name:"E-Sports")
+eSport.photo.attach(io: eSport_image, filename: 'e.png', content_type: 'image/png')
+
 
 
 # a Location have
@@ -84,7 +99,7 @@ Game.create!(title:"Tournoi Tennis",description:"Le coc Club organise Un tournoi
 Game.create!(title:"Match football",description:"je cherche 2 joueur pour un march foot 7x7",date:DateTime.now,capacity:2,status:"still need player",location_id:arsenal.id,sport_id: football.id,creator_id:user1.id)
 Game.create!(title:"Partido Pelota",description:"il nous manque un joueur",date:DateTime.now,capacity:1,status:"still need player",location_id:arsenal.id,sport_id: football.id,creator_id:user1.id)
 Game.create!(title:"Tennis Simple",description:"je cherche un TennisMan pour pratiquer ",date:DateTime.now,capacity:1,status:"still need player",location_id: clubcoc.id,sport_id: tennis.id,creator_id: user1.id)
-Game.create!(title:"Match basketball",description:"je cherche 3 joueurs pour un match ",date:DateTime.now,capacity:3,status:"still need player",location_id:cpmlexM5.id,sport_id: basketball.id,creator_id:user1.id)
+Game.create!(title:"Match basketball",description:"je cherche 3 joueurs pour un match ",date:DateTime.now,capacity:3,status:"still need player",location_id:complexM5.id,sport_id: basketball.id,creator_id:user1.id)
 
 
 
