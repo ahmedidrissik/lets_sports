@@ -45,11 +45,11 @@ ActiveRecord::Schema.define(version: 2022_04_05_162034) do
 
   create_table "bookings", force: :cascade do |t|
     t.string "status"
-    t.bigint "game_id", null: false
+    t.bigint "game_id"
     t.integer "player_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "event_id"
+    t.bigint "event_id", null: false
     t.index ["event_id"], name: "index_bookings_on_event_id"
     t.index ["game_id"], name: "index_bookings_on_game_id"
   end
@@ -106,7 +106,7 @@ ActiveRecord::Schema.define(version: 2022_04_05_162034) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.integer "rating", default: 0
+    t.integer "rating"
     t.string "phone_number"
     t.integer "age"
     t.text "bio"
