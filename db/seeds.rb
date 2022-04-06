@@ -37,10 +37,10 @@ user20 =User.create!(name:"Ossama", email:"handwfi@gmail.com",password:"123456",
 # a Sport have :
 #---name
 p "Creating Sport"
-football = Sport.create!(name:"Football")
-tennis = Sport.create!(name:"Tennis")
-basketball = Sport.create!(name:"Basketball")
-eSport = Sport.create!(name:"E-Sports")
+football = Sport.create!(name:"Football",photo:"paysage_foot.jpeg")
+tennis = Sport.create!(name:"Tennis",photo:"paysage_tennis.jpeg")
+basketball = Sport.create!(name:"Basketball",photo:"paysage_basket.jpeg")
+eSport = Sport.create!(name:"E-Sports",photo:"paysage_esport.jpeg")
 
 
 # a Location have
