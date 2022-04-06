@@ -12,6 +12,12 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    booking = Booking.find(params[:id])
+    booking.status = params[:status]
+    booking.save
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     @game = @booking.game
