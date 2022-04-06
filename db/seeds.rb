@@ -14,7 +14,7 @@ p "destroy Ok"
 #---"age"
 #---"bio"
 #---rating
-p "Creating User"
+# p "Creating User"
 
 file1 = URI.open("https://avatars.githubusercontent.com/u/74985628?v=4")
 userAdmin = User.create!(name:"bididah",email:"hanfi@gmail.com" ,password:"123456",phone_number:"0661137987",age:27,bio:"I'am a person that loves Football",rating:[1,2,3,4,5].sample,admin: true)
@@ -24,7 +24,8 @@ userAdmin.photo.attach(io: file1, filename: 'nes.png', content_type: 'image/png'
 user1 = nil
 names = ['hamza','Ahmed','Mohamed',"Zakaria","Omar","Boris","HakiMi","Protegaw","Bididah"]
 9.times do  |i|
-  file = URI.open(Faker::Avatar.image)
+  p "Creating User #{names[i]}"
+  file = URI.open("https://i.pravatar.cc/300")
   user1 = User.create!(name:names[i],email:Faker::Internet.email ,password:"123456",phone_number:"0661137987",age:27,bio:"I'am a person that loves Football",rating:[1,2,3,4,5].sample)
   user1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 end
@@ -50,10 +51,24 @@ end
 # a Sport have :
 #---name
 p "Creating Sport"
+football_image = URI.open("app/assets/images/paysage_foot.jpeg")
 football = Sport.create!(name:"Football")
+football.photo.attach(io: football_image, filename: 'f.png', content_type: 'image/png')
+
+p "foot ok Sport"
+
+tennis_image = URI.open("app/assets/images/paysage_tennis.jpeg")
 tennis = Sport.create!(name:"Tennis")
+tennis.photo.attach(io: tennis_image, filename: 't.png', content_type: 'image/png')
+
+basketball_image = URI.open("app/assets/images/paysage_basket.jpeg")
 basketball = Sport.create!(name:"Basketball")
+basketball.photo.attach(io: basketball_image, filename: 'b.png', content_type: 'image/png')
+
+eSport_image = URI.open("app/assets/images/paysage_esport.jpeg")
 eSport = Sport.create!(name:"E-Sports")
+eSport.photo.attach(io: eSport_image, filename: 'e.png', content_type: 'image/png')
+
 
 
 # a Location have
