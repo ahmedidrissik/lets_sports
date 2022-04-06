@@ -1,4 +1,4 @@
-<h1 class="new-game-title"><strong> Créer un nouveau match </strong></h1>
+<h1 class="new-game-title"><strong> Créer une nouvelle annonce </strong></h1>
 
 <div class="container new-game-container">
 
@@ -12,7 +12,7 @@
       <%= f.button :submit, "Ajouter lieu", {class: "btn btn-primary "}%>
     <% end %>
 
-    <%= simple_form_for [@game] do |f| %>
+    <%= simple_form_for [@event] do |f| %>
       <%= f.input :title, placeholder: "Titre", label: "Titre" %>
       <%= f.input :description, placeholder: "Description" %>
       <%= f.input :date, placeholder: "Date"%>

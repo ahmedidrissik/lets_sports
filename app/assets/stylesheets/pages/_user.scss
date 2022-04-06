@@ -1,4 +1,4 @@
-body{
+body {
   color: #7e7e7e;
 }
 
@@ -6,6 +6,7 @@ body{
   padding: 50px 0;
   position: relative;
 }
+
 .gray-bg {
   background-color: #f5f5f5;
 }
@@ -24,71 +25,81 @@ body{
   border-style: inset;
   border-radius: 50%;
 }
+
 /* About Me
 ---------------------*/
 .about-text h3 {
-font-size: 45px;
-font-weight: 700;
-margin: 0 0 6px;
+  font-size: 45px;
+  font-weight: 700;
+  margin: 0 0 6px;
 }
+
 @media (max-width: 767px) {
-.about-text h3 {
-  font-size: 35px;
+  .about-text h3 {
+    font-size: 35px;
+  }
 }
-}
+
 .about-text h6 {
-font-weight: 600;
-margin-bottom: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
+
 @media (max-width: 767px) {
-.about-text h6 {
-  font-size: 18px;
+  .about-text h6 {
+    font-size: 18px;
+  }
 }
-}
+
 .about-text p {
-font-size: 18px;
-max-width: 450px;
+  font-size: 18px;
+  max-width: 450px;
+  margin: 0px;
 }
+
 .about-text p mark {
-font-weight: 600;
-color: #20247b;
+  font-weight: 600;
+  color: #20247b;
 }
 
 .about-list {
-padding-top: 10px;
+  padding-top: 10px;
 }
+
 .about-list .media {
-padding: 5px 0;
+  padding: 5px 0;
 }
+
 .about-list label {
-color: #20247b;
-font-weight: 600;
-width: 88px;
-margin: 0;
-position: relative;
+  color: #20247b;
+  font-weight: 600;
+  width: 88px;
+  margin: 0;
+  position: relative;
 }
 
 .about-list p {
-margin: 0;
-font-size: 15px;
+  margin: 0;
+  font-size: 15px;
 }
 
 @media (max-width: 991px) {
-.about-avatar {
-  margin-top: 30px;
-  border-radius: 50%;
-}
+  .about-avatar {
+    margin-top: 30px;
+    border-radius: 50%;
+  }
 }
 
 .about-section .counter {
-padding: 22px 20px;
-background: #ffffff;
-border-radius: 10px;
-box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  padding: 22px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
 }
+
 .about-section .counter .count-data {
-margin-top: 10px;
-margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .about-section {
@@ -96,29 +107,113 @@ margin-bottom: 10px;
   border-radius: 8px;
   box-shadow: 2px 2px 8px rgba($color: #000000, $alpha: .3);
 }
+
 .about-section .counter .count {
-font-weight: 700;
-color: #20247b;
-margin: 0 0 5px;
+  font-weight: 700;
+  color: #20247b;
+  margin: 0 0 5px;
 }
+
 .about-section .counter p {
-font-weight: 600;
-margin: 0;
+  font-weight: 600;
+  margin: 0;
 }
 
 .theme-color {
   color: #fc5356;
 }
+
 .dark-color {
   color: #20247b;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.rate {
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+}
+
+.rate:not(:checked)>input {
+  position: absolute;
+  top: -9999px;
+}
+
+.rate:not(:checked)>label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
+  content: '★ ';
+}
+
+.rate>input:checked~label {
+  color: #ffc700;
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+  color: #deb217;
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+  color: #c59b08;
+}
+
+#edit-btn {
+  padding: 12px;
+  color: #eee;
+  background-color: #7b8ab8 !important;
+  border-radius: 4px;
+  box-shadow: 3px 3px 11px -1px rgba(0, 0, 0, 0.55);
+  text-decoration: none;
+  font-weight: 700;
+  margin-inline: 62px;
+
+  &:hover {
+    color: #7b8ab8;
+    background-color: #eee !important;
+  }
+}
+
+#voir-btn {
+  padding: 6px;
+  color: #eee;
+  background-color: #7b8ab8 !important;
+  border-radius: 4px;
+  box-shadow: 3px 3px 11px -1px rgba(0, 0, 0, 0.55);
+  text-decoration: none;
+  font-weight: 700;
+  margin-inline: 62px;
+
+  &:hover {
+    color: #7b8ab8;
+    background-color: #eee !important;
+  }
+}
+
 #annonce-link h3 {
-  padding: 2px;
+  padding: 6px;
   padding-inline-start: 16px;
   color: #eee;
   background-color: #7b8ab8 !important;
   border-radius: 4px;
+  box-shadow: 3px 3px 11px -1px rgba(0, 0, 0, 0.55);
+
   &:hover {
     color: #7b8ab8;
     background-color: #eee !important;
@@ -126,23 +221,13 @@ margin: 0;
 }
 
 #participation-link h3 {
-  padding: 2px;
+  padding: 6px;
   padding-inline-start: 16px;
   color: #eee;
   background-color: #7b8ab8 !important;
   border-radius: 4px;
-  &:hover {
-    color: #7b8ab8;
-    background-color: #eee !important;
-  }
-}
+  box-shadow: 3px 3px 11px -1px rgba(0, 0, 0, 0.55);
 
-#attente-link h3 {
-  padding: 2px;
-  padding-inline-start: 16px;
-  color: #eee;
-  background-color: #7b8ab8 !important;
-  border-radius: 4px;
   &:hover {
     color: #7b8ab8;
     background-color: #eee !important;
@@ -150,8 +235,14 @@ margin: 0;
 }
 
 #profilegames {
-  height: 200px;
-  h5{
-    font-weight: 500;
+  height: 220px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 3px 3px 11px -1px rgba(0, 0, 0, 0.55);
+  margin-top: 8px;
+
+  h5 {
+    font-weight: 800;
+    border-bottom: 1px solid #000000;
   }
 }
