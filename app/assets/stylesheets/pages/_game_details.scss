@@ -39,6 +39,12 @@
   background-color: green;
   text-align: center;
   border-radius: 8px;
+  padding: 2px 4px;
+  color: white;
+  &:hover {
+    background-color: lightgreen;
+    color: black;
+  }
 }
 
 .btnx {
@@ -47,6 +53,12 @@
   background-color: red;
   text-align: center;
   border-radius: 8px;
+  padding: 2px 4px;
+  color: white;
+  &:hover {
+    background-color: lightcoral;
+    color: black;
+  }
 }
 
 .bubble {
