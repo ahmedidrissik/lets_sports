@@ -5,6 +5,7 @@ body {
 .section {
   padding: 50px 0;
   position: relative;
+  margin-bottom: 0px;
 }
 
 .gray-bg {
@@ -24,6 +25,7 @@ body {
   vertical-align: middle;
   border-style: inset;
   border-radius: 50%;
+  size-adjust: 50px;
 }
 
 /* About Me
