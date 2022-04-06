@@ -22,7 +22,12 @@
 .toto {
   height: 80px;
 }
+
 .details {
   position: relative;
   right: 100px;
+}
+
+.the-container {
+  min-height: calc(100vh - 148px);
 }

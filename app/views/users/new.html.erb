@@ -11,6 +11,9 @@
                         <div class="media">
                             <%= f.input :age, placeholder: "Age", label: "Age" %>
                         </div>
+                        <div class="media">
+                            <%= f.input :photo, placeholder: "Photo", label: "Photo" %>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="media">
@@ -27,7 +30,11 @@
         </div>
         <div class="col-md-6">
           <div class="about-avatar">
-              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt="">
+              <% if current_user.photo.key == nil %>
+                <%= image_tag "https://i.pravatar.cc/300" %>
+              <% else %>
+                <%= cl_image_tag current_user.photo.key %>
+              <% end %>
           </div>
         </div>
       </div>
