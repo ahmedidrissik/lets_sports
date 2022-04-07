@@ -1,41 +1,61 @@
-#game-index{
+#game-index {
   p {
     margin-left: 8px;
     margin-bottom: 4px;
   }
-  .game-hour{
+
+  .game-hour {
     display: flex;
     position: relative;
-    p{
+
+    p {
       display: inline-block;
     }
   }
-  .game-location{
+
+  .game-location {
     display: flex;
-    p{
+
+    p {
       display: inline-block;
     }
   }
-  .game-date{
+
+  .game-date {
     display: flex;
-    p{
+
+    p {
       display: inline-block;
     }
   }
-  .game-details{
+
+  .game-details {
     position: absolute;
     bottom: 32px;
     right: 32px;
   }
 }
 
+#cardwhite {
+  background-color: #FFFFFF;
+  border: 1px solid black;
+}
+
 #btnblk {
-  color: #000000 !important;
-  font-weight: 800;
-  border: #000000;
-  background-color: white;
+  border-radius: 20px;
+  background-color: #ff1e00;
+  color: #FFFFFF !important;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  border: 1px solid #FFFFFF;
+
   &:hover {
-    color: white !important;
-    background-color: black;
+    background-color: #ffffff;
+    color: #FF1e00 !important;
+    border: 1px solid #FF1e00;
   }
 }
