@@ -1,0 +1,10 @@
+
+  <div id="ex1" class="modal">
+          <h2> Entrez les informations :</h2>
+          <%= simple_form_for [@location] do |f| %>
+            <%= f.input :name, placeholder: "Nom", label: "Nom" %>
+            <%= f.input :address, placeholder: "Adresse", label: "Adresse" %>
+            <%= f.input :city, placeholder: "Ville", label: "Ville" %>
+            <%= f.button :submit, "Ajouter lieu", {class: "btn btn-primary "}%>
+          <% end %>
+  </div>
