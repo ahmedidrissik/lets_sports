@@ -2,24 +2,29 @@
 
 <div class="container new-game-container">
 
-
-  <div class="container item-form">
-    <h2> Entrez les informations :</h2>
-    <%= simple_form_for [@location] do |f| %>
-      <%= f.input :name, placeholder: "Nom", label: "Nom" %>
-      <%= f.input :address, placeholder: "Adresse", label: "Adresse" %>
-      <%= f.input :city, placeholder: "Ville", label: "Ville" %>
-      <%= f.button :submit, "Ajouter lieu", {class: "btn btn-primary "}%>
-    <% end %>
-
     <%= simple_form_for [@event] do |f| %>
       <%= f.input :title, placeholder: "Titre", label: "Titre" %>
       <%= f.input :description, placeholder: "Description" %>
       <%= f.input :date, placeholder: "Date"%>
-      <%= f.association :location, placeholder: "Lieu", label: "Lieu" %>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <%= f.association :location, placeholder: "Lieu", label: "Lieu" %>
+          </div>
+          <div class="col-md-2">
+              <div class="icon">
+
+              <a id="newloc" href="#ex1" rel="modal:open">
+                <i class="fa-solid fa-circle-plus"></i>
+                Nouveau
+              </a>
+              </div>
+          </div>
+        </div>
+      </div>
       <%= f.input :capacity, placeholder: "Capacité", label: "Capacité" %>
       <%= f.association :sport, prompt: "Selectionnez un sport" %>
       <%= f.button :submit, "Créer", {class: "btn btn-primary "}%>
     <% end %>
-  </div>
 </div>
+<%= render "games/popup" %>
