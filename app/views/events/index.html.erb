@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row">
       <% @events.each do |event| %>
-      <div class="card border-primary col-12 mb-3 col-sm-12">
+      <div class="card border-primary col-12 mb-3 col-sm-12" id="cardwhite">
         <div class="card-header d-flex justify-content-between" style="padding-bottom: 0px;">
           <div class="d-flex">
             <i class="fa-solid fa-calendar-days"></i>
@@ -25,7 +25,7 @@
                 class="avatar-large" alt="">
             </div>
             <div class="col-md-9">
-              <h3 class="card-title"><strong><%= event.title %></strong></h3>
+              <h3 class="card-title" style="color: black;"><strong><%= event.title %></strong></h3>
               <div class="game-date">
                 <i class="fa-solid fa-calendar-days"></i>
                 <p><%= event.date.strftime('%d/%m/%Y') %> </p>
