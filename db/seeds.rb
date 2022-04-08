@@ -9,13 +9,17 @@ p "destroy Ok"
 
 p "Creating Users"
 
-file1 = URI.open("https://i.pravatar.cc/150?img=7")
-userAdmin = User.create!(name:"bididah",email:"hanfi@gmail.com" ,password:"123456",phone_number:"+212 6 61137987",age:27,bio:"I'am a person that loves Football",rating:5 ,admin: true)
+file1 = URI.open("https://avatars.githubusercontent.com/u/98267472?v=4")
+userAdmin = User.create!(name:"Ahmed",email:"a@gmail.com" ,password:"123456",phone_number:"+212 6 61137987",age:27,bio:"I'am a person that loves Football",rating:5 ,admin: true)
 userAdmin.photo.attach(io: file1, filename: 'nes.png', content_type: 'image/png')
+
+file2 = URI.open("https://avatars.githubusercontent.com/u/96705698?v=4")
+userk = User.create!(name:"Karim",email:"k@gmail.com" ,password:"123456",phone_number:"+212 6 61137987",age:27,bio:"I'am a person that loves Football",rating:5 ,admin: true)
+userk.photo.attach(io: file2, filename: 'nes.png', content_type: 'image/png')
 
 
 user1 = nil
-names = ['hamza','Ahmed','Mohamed',"Zakaria","Omar","Boris","HakiMi","Protegaw","Bididah"]
+names = ['Hamza','Ahmed','Mohamed',"Zakaria","Omar","Boris","HakiMi","Protegaw","Bididah"]
 9.times do  |i|
   p "Creating User #{names[i]}"
   file = URI.open("https://i.pravatar.cc/150?img=#{i+12}")
@@ -58,11 +62,12 @@ complexM5 = Location.create!(name:'Salle basket M5',address:'Maarif',city:"Casab
 p "Locations created ! "
 
 p "Creating Game"
+
 Game.create!(title:"Match 5x5",description:"nous sommes un groupe de 5 joueurs et nous cherchons 5 autres joueurs, le terrain est bel et bien reservé à cityFoot",date:DateTime.now,capacity:5,status:"still need player",location_id:cityFoot.id,sport_id: football.id,creator_id:userAdmin.id)
-Game.create!(title:"Tournoi Tennis",description:"Le coc Club organise Un tournoi Tennis palces limite a 10 joueurs ",date:DateTime.now,capacity:10,status:"still need player",location_id: clubcoc.id,sport_id: tennis.id,creator_id: User.first.id)
-Game.create!(title:"Match football",description:"je cherche 2 joueur pour un march foot 7x7",date:DateTime.now,capacity:2,status:"still need player",location_id:arsenal.id,sport_id: football.id,creator_id:User.second.id)
-Game.create!(title:"Partido Pelota",description:"il nous manque un joueur",date:DateTime.now,capacity:1,status:"still need player",location_id:arsenal.id,sport_id: football.id,creator_id:User.third.id)
+Game.create!(title:"Tournoi Tennis",description:"Le coc Club organise Un tournoi Tennis palces limite a 10 joueurs ",date:DateTime.now,capacity:10,status:"still need player",location_id: clubcoc.id,sport_id: tennis.id,creator_id: User.last.id)
+Game.create!(title:"Basketball party ! ",description:"je cherche 2 joueur pour un march basketball",date:DateTime.now,capacity:2,status:"still need player",location_id:arsenal.id,sport_id: basketball.id,creator_id:userAdmin.id)
+Game.create!(title:"E-sport challenges",description:"Pour tous les adepte d'e-sports",date:DateTime.now,capacity:1,status:"still need player",location_id:arsenal.id,sport_id: eSport.id,creator_id:User.third.id)
 Game.create!(title:"Tennis Simple",description:"je cherche un TennisMan pour pratiquer ",date:DateTime.now,capacity:1,status:"still need player",location_id: clubcoc.id,sport_id: tennis.id,creator_id: User.fourth.id)
-Game.create!(title:"Match basketball",description:"je cherche 3 joueurs pour un match ",date:DateTime.now,capacity:3,status:"still need player",location_id:complexM5.id,sport_id: basketball.id,creator_id:User.fourth.id)
+Game.create!(title:"Match basketball",description:"je cherche 3 joueurs pour un match ",date:DateTime.now,capacity:3,status:"still need player",location_id:complexM5.id,sport_id: basketball.id,creator_id:User.fifth.id)
 
 p "Games created ! "
