@@ -6,5 +6,6 @@
             <%= f.input :address, placeholder: "Adresse", label: "Adresse" %>
             <%= f.input :city, placeholder: "Ville", label: "Ville" %>
             <%= f.button :submit, "Ajouter lieu", {class: "btn btn-primary "}%>
+            <input type="hidden" value="<%= ismatch %>" name="match">
           <% end %>
   </div>
