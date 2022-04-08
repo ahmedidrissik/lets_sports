@@ -1,12 +1,12 @@
 <section id="game-index">
   <div class="cotainer toto">
-    <h1 class="text-center py-3"><strong>Parties en cours</strong></h1>
+    <h1 class="text-center py-3"><strong>Parties disponibles</strong></h1>
     <%= link_to "Créer une partie",new_game_path, class: "btn btn-outline-primary game mx-4", id:"btnblk" %>
   </div>
   <div class="container">
     <div class="row">
       <% @games.each do |game| %>
-      <div class="card border-primary col-12 mb-3 col-sm-12">
+      <div class="card border-primary col-12 mb-3 col-sm-12" id="cardwhite">
         <div class="card-header d-flex justify-content-between" style="padding-bottom: 0px;">
           <div class="d-flex">
             <i class="fa-solid fa-calendar-days"></i>
@@ -23,7 +23,7 @@
              <%= cl_image_tag User.find(game.creator_id).photo.key, class: "avatar-large"  %>
             </div>
             <div class="col-md-9">
-              <h3 class="card-title"><strong><%= game.title %></strong></h3>
+              <h3 class="card-title" style="color: black;"><strong><%= game.title %></strong></h3>
               <div class="game-date">
                 <i class="fa-solid fa-calendar-days"></i>
                 <p><%= game.date.strftime('%d/%m/%Y') %> </p>

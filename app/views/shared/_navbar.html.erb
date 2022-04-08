@@ -2,12 +2,10 @@
   <div class="container-fluid">
    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "Logo.png" %>
+  <%= link_to "Boutique","https://lets-sports-shop.herokuapp.com/", class: "nav-link home-btn mx-4 my-2" %>
+  <%= link_to "Jouer", games_path, class: "nav-link home-btn mx-4 my-2" %>
+  <%= link_to "Assister", events_path, class: "nav-link home-btn mx-4 my-2" %>
     <% end %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
