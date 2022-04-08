@@ -56,7 +56,7 @@ export default class extends Controller {
       Swal.fire(
         'Réservation annulée',
         'à une prochaine fois !',
-        'success'
+        'error'
       );
     })
   }

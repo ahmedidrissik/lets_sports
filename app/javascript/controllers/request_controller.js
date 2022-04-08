@@ -42,7 +42,7 @@ export default class extends Controller {
       Swal.fire(
         'Réservation refusée',
         'miskine !',
-        'success'
+        'error'
       );
     })
   }
