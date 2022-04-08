@@ -14,5 +14,4 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
-
-import Swal from 'sweetalert2';
+import "jquery-modal"
