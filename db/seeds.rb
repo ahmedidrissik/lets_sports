@@ -9,7 +9,7 @@ p "destroy Ok"
 
 p "Creating Users"
 
-file1 = URI.open("https://avatars.githubusercontent.com/u/74985628?v=4")
+file1 = URI.open("https://i.pravatar.cc/150?img=7")
 userAdmin = User.create!(name:"bididah",email:"hanfi@gmail.com" ,password:"123456",phone_number:"+212 6 61137987",age:27,bio:"I'am a person that loves Football",rating:5 ,admin: true)
 userAdmin.photo.attach(io: file1, filename: 'nes.png', content_type: 'image/png')
 
