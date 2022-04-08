@@ -1,0 +1,29 @@
+<div class="player-card" data-id="<%= booking.id %>" data-controller="request">
+  <% if booking.user.photo.key == nil %>
+    <%= image_tag "https://i.pravatar.cc/300", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+  <% else %>
+    <%= cl_image_tag booking.user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+  <% end %>
+    <div class="player-card-content">
+      <%= "#{booking.user.name}" %>
+        <% booking.user.rating.times do %>
+          <i class="fa-solid fa-star"></i>
+        <% end %>
+        <% (5 - booking.user.rating).times do %>
+          <i class="fa-regular fa-star"></i>
+        <% end %>
+        <p>
+          <%= "#{booking.status} " %>
+        </p>
+        <div>
+            <% if is_creator %>
+              <% if booking.status != "confirmé" %>
+                <a data-action="click->request#valider" class="btn btnv">Valider</a>
+              <% end %>
+              <% if booking.status != "refusé" %>
+                <a data-action="click->request#refuser" class="btn btnx">Refuser</a>
+              <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>

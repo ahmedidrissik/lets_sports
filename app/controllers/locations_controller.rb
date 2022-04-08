@@ -2,7 +2,7 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new(location_params)
     if @location.save
-      redirect_to new_game_path
+      redirect_to params[:match] == "true" ? new_game_path : new_event_path
     else
       render "new"
     end

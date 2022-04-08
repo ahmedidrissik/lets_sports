@@ -16,7 +16,7 @@ export default class extends Controller {
         status: 'confirmé',
       })
     }).then((response) => response.text()).then((data) => {
-      //this.detailsTarget.innerHTML = data;
+      this.element.outerHTML = data;
       Swal.fire(
         'Réservation confirmée',
         'Bon match !',
@@ -38,7 +38,8 @@ export default class extends Controller {
         status: 'refusé',
       })
     }).then((response) => response.text()).then((data) => {
-      //this.detailsTarget.innerHTML = data;
+      this.element.outerHTML = data;
+
       Swal.fire(
         'Réservation refusée',
         'miskine !',
