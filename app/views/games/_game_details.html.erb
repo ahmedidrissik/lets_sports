@@ -73,31 +73,7 @@
       <% is_creator=current_user==game.user %>
         <% game.bookings.each do |b| %>
           <div class="col-md-4">
-            <div class="player-card">
-              <% if b.user.photo.key == nil %>
-                <%= image_tag "https://i.pravatar.cc/300", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <% else %>
-                <%= cl_image_tag b.user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <% end %>
-                <div class="player-card-content">
-                  <%= "#{b.user.name}" %>
-                    <% b.user.rating.times do %>
-                      <i class="fa-solid fa-star"></i>
-                    <% end %>
-                    <% (5 - b.user.rating).times do %>
-                      <i class="fa-regular fa-star"></i>
-                    <% end %>
-                     <p>
-                      <%= "#{b.status} " %>
-                    </p>
-                    <div data-id="<%= b.id %>" data-controller="request">
-                        <% if is_creator %>
-                          <a data-action="click->request#valider" class="btn btnv">Valider</a>
-                          <a data-action="click->request#refuser" class="btn btnx">Refuser</a>
-                        <% end %>
-                    </div>
-                </div>
-            </div>
+            <%= render "games/player_card", booking: b, is_creator: is_creator %>
           </div>
         <% end %>
     </div>

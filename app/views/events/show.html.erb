@@ -1,10 +1,10 @@
-<div class="container">
-  <div class="container-game-details" id="game-details">
+<div data-controller="event-actions" class="container">
+  <div data-event-actions-target="details" class="container-game-details" id="game-details">
    <%= render "event_details", event: @event %>
   </div>
-  <div class="container-game-details" id="game-details">
+  <div class="container-game-details" id="event-details">
       <% reserved = @event.bookings.pluck(:player_id).include?(current_user.id) %>
-        <button id="annulation" type="button" class="btn btn-primary <%= reserved ? '' : 'd-none' %>">Annuler</button>
-        <button id="confirmation" type="button" class="btn btn-primary <%= !reserved ? '' : 'd-none' %>">Rejoindre</button>
+        <button data-action="click->event-actions#cancel" id="annulation" type="button" class="btn btn-primary <%= reserved ? '' : 'd-none' %>">Annuler</button>
+        <button data-action="click->event-actions#confirm" id="confirmation" type="button" class="btn btn-primary <%= !reserved ? '' : 'd-none' %>">Rejoindre</button>
   </div>
 </div>
