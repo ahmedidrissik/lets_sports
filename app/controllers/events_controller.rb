@@ -23,8 +23,11 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @booking_id = @event.bookings.blank? ? 0 : @event.bookings.where(user: current_user).first.id
+    #@booking_id = @event.bookings.blank? ? 0 : @event.bookings.where(user: current_user).first.id
+    #what is this code doing ? on line 26 ?
+    @booking_id = @event.bookings.blank? ? 0 : @event.bookings.first.id
   end
+
 
   def update
     @event = Event.find(params[:id])
