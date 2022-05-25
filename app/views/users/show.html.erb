@@ -21,6 +21,7 @@
                 </div>
                 <label>Rating</label><br>
                 <%= @user.rating %>
+
                   <% if @user !=current_user %>
                     <div class="rate">
                       <input type="radio" id="star5" name="rate" value="5" />
@@ -104,20 +105,26 @@
           </div>
           <div class="row d-none" id="participations">
             <% current_user.bookings.each do |booking| %>
+              <% event_or_game = booking.game.blank? ? booking.event : booking.game %>
               <div class="col-md-6">
                 <div class="card">
                   <div class="card-body" id="profilegames">
                     <h5 class="card-title">
-                      <%= booking.game.title %>
+                      <%= event_or_game.title %>
+
                     </h5>
                     <i class="fa-solid fa-clock"></i>
                     <h6 class="card-subtitle mb-2 text-muted">
-                      <%= booking.game.date.strftime("%d %m - %H:%M") %>
+                      <%= event_or_game.date.strftime("%d %m - %H:%M") %>
                     </h6>
                     <p class="card-text">
-                      <%= booking.game.description %>
+                      <%= event_or_game.description %>
                     </p>
-                    <%= link_to "Voir annonce" , game_path(booking.game), id: "voir-btn" %>
+                    <% if booking.game.blank? %>
+                      <%= link_to "Voir annonce" , event_path(booking.event), id: "voir-btn" %>
+                    <% else %>
+                      <%= link_to "Voir annonce" , game_path(booking.game), id: "voir-btn" %>
+                    <% end %>
                   </div>
                 </div>
               </div>

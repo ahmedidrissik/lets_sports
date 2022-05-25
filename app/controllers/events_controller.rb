@@ -15,6 +15,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     if @event.save
+      Booking.create(status: "confirmé", event_id: @event.id, player_id: current_user.id)
       redirect_to event_path(@event)
     else
       render "new"
@@ -23,9 +24,9 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    #@booking_id = @event.bookings.blank? ? 0 : @event.bookings.where(user: current_user).first.id
+    @booking_id = @event.bookings.where(user: current_user).blank? ? 0 : @event.bookings.where(user: current_user).first.id
     #what is this code doing ? on line 26 ?
-    @booking_id = @event.bookings.blank? ? 0 : @event.bookings.first.id
+    #@booking_id = @event.bookings.blank? ? 0 : @event.bookings.first.id
   end
 
 

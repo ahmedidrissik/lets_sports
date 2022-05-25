@@ -15,6 +15,7 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     @game.user = current_user
     if @game.save
+      Booking.create(status: "confirmé", game_id: @game.id, player_id: current_user.id)
       redirect_to game_path(@game)
     else
       render "new"

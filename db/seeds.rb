@@ -65,7 +65,6 @@ p "Creating Game"
 
 Game.create!(title:"Match 5x5",description:"nous sommes un groupe de 5 joueurs et nous cherchons 5 autres joueurs, le terrain est bel et bien reservé à cityFoot",date:DateTime.now,capacity:5,status:"still need player",location_id:cityFoot.id,sport_id: football.id,creator_id:userAdmin.id)
 Game.create!(title:"Tournoi Tennis",description:"Le coc Club organise Un tournoi Tennis palces limite a 10 joueurs ",date:DateTime.now,capacity:10,status:"still need player",location_id: clubcoc.id,sport_id: tennis.id,creator_id: User.last.id)
-Game.create!(title:"Basketball party ! ",description:"je cherche 2 joueur pour un march basketball",date:DateTime.now,capacity:2,status:"still need player",location_id:arsenal.id,sport_id: basketball.id,creator_id:userAdmin.id)
 Game.create!(title:"E-sport challenges",description:"Pour tous les adepte d'e-sports",date:DateTime.now,capacity:1,status:"still need player",location_id:arsenal.id,sport_id: eSport.id,creator_id:User.third.id)
 Game.create!(title:"Tennis Simple",description:"je cherche un TennisMan pour pratiquer ",date:DateTime.now,capacity:1,status:"still need player",location_id: clubcoc.id,sport_id: tennis.id,creator_id: User.fourth.id)
 Game.create!(title:"Match basketball",description:"je cherche 3 joueurs pour un match ",date:DateTime.now,capacity:3,status:"still need player",location_id:complexM5.id,sport_id: basketball.id,creator_id:User.fifth.id)
