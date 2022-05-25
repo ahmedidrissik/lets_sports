@@ -20,10 +20,11 @@
         <div class="card-body">
           <div class="row">
             <div class="col-md-3">
-              <img
-                src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1643974180/sux8gkvgvmtj2smi2z2r.jpg"
-                class="avatar-large" alt="">
-            </div>
+         <% if event.user.photo.key.nil? %>
+            <%= image_tag "https://png.pngtree.com/element_our/20200610/ourlarge/pngtree-character-default-avatar-image_2237203.jpg", class: "avatar-large"%>
+         <% else %>
+              <%= cl_image_tag event.user.photo.key, class: "avatar-large "%>
+         <% end %>            </div>
             <div class="col-md-9">
               <h3 class="card-title" style="color: black;"><strong><%= event.title %></strong></h3>
               <div class="game-date">
